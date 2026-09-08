@@ -7,6 +7,7 @@ import sys
 import ssl
 import json
 import os
+import time
 import csv
 import io
 import re
@@ -79,6 +80,8 @@ def _cache_path(key: str) -> str:
 
 # 單一上游回應的大小上限。全台最大的那份靜態場資也只有幾 MB，16 MiB 是寬鬆的天花板。
 MAX_RESPONSE_BYTES = 16 * 1024 * 1024
+SINGLEFLIGHT_WAIT = 8.0     # 搶不到鎖時最多等幾秒別人的結果
+SINGLEFLIGHT_STALE = 60.0   # 鎖超過幾秒沒人放就當持有者死了
 
 
 def fetch_url(
@@ -100,12 +103,53 @@ def fetch_url(
         except OSError:
             pass   # 沒有快取或讀不到就照常出去抓
 
+    # 跨行程 single-flight（codex 紅隊 #3）：快取一過期，同時進來的幾個查詢
+    # 會一起 miss、一起打同一個上游。用目錄當鎖（mkdir 是原子的，不必 flock，
+    # 而且鎖沒放掉也不會卡死——超過寬限時間就當它死了自己上）。
+    # 搶不到鎖的人先等一下看別人有沒有把快取寫好，等不到就自己去抓：
+    # 這道鎖是省上游流量用的，不該變成新的故障點。
+    lock_dir = path + ".lock"
+    got_lock = False
+    if CACHE_TTL > 0:
+        try:
+            os.makedirs(CACHE_DIR, exist_ok=True)
+            os.mkdir(lock_dir)
+            got_lock = True
+        except FileExistsError:
+            try:
+                age = time.time() - os.path.getmtime(lock_dir)
+                if age > SINGLEFLIGHT_STALE:
+                    os.rmdir(lock_dir)          # 上一個持有者死在半路
+            except OSError:
+                pass
+            waited = 0.0
+            while waited < SINGLEFLIGHT_WAIT:
+                time.sleep(0.25)
+                waited += 0.25
+                try:
+                    if time.time() - os.path.getmtime(path) < CACHE_TTL:
+                        with open(path, "rb") as f:
+                            return f.read()     # 別人抓回來了，直接用
+                except OSError:
+                    pass
+        except OSError:
+            pass
+
     h = {"User-Agent": "Mozilla/5.0"}
     if headers:
         h.update(headers)
     req = urllib.request.Request(url, data=data, method=method, headers=h)
     ctx = create_ssl_context(url)
-    with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
+    try:
+        _resp_cm = urllib.request.urlopen(req, timeout=timeout, context=ctx)
+    except Exception:
+        if got_lock:
+            try:
+                os.rmdir(lock_dir)      # 抓失敗也要放鎖，否則後面的人白等
+            except OSError:
+                pass
+        raise
+    with _resp_cm as resp:
         if resp.status != 200:
             raise urllib.error.HTTPError(url, resp.status, resp.reason, resp.headers, None)
         # 上游回應大小要有上限（2026-09-08 codex 紅隊 #3）：名單內那幾個政府站
@@ -126,6 +170,11 @@ def fetch_url(
             os.replace(tmp, path)
         except OSError:
             pass   # 快取寫不進去不該讓查詢失敗
+    if got_lock:
+        try:
+            os.rmdir(lock_dir)
+        except OSError:
+            pass
     return body
 
 

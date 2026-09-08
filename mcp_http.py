@@ -18,6 +18,7 @@
 """
 
 import argparse
+import ipaddress
 import json
 import os
 import sys
@@ -42,12 +43,39 @@ WINDOW = 60.0
 MAX_KEY_LEN = 64        # 標頭可偽造：長度不設限＝拿記憶體換一行字
 MAX_BUCKETS = 4096      # 分桶數硬上限，滿了整批重來（見 _rate_ok）
 MAX_BATCH = 8           # JSON-RPC 批次筆數上限（一次 POST 只計一次費的放大面）
+
+# 受信任代理（codex 紅隊 #4）：CF-Connecting-IP 是給我們的一份「來源是誰」的
+# 說法，只有在**送這句話的人**確實是我們的反向代理時才值得採信。設成空字串
+# ＝維持舊行為（誰說都信），設成 CIDR／IP 清單則只有對端落在清單內才讀標頭，
+# 其餘一律以 socket 對端分桶——偽造標頭的人就只能偽造成自己。
+TRUSTED_PROXIES = [x.strip() for x in
+                   os.environ.get("TW_PARKING_TRUSTED_PROXIES", "").split(",")
+                   if x.strip()]
+
+
+def _peer_trusted(peer_ip):
+    if not TRUSTED_PROXIES:
+        return True          # 沒設定＝不啟用這道檢查
+    try:
+        addr = ipaddress.ip_address(peer_ip)
+    except ValueError:
+        return False
+    for entry in TRUSTED_PROXIES:
+        try:
+            if addr in ipaddress.ip_network(entry, strict=False):
+                return True
+        except ValueError:
+            continue
+    return False
 _rl_lock = threading.Lock()
 _rl_hits = {}          # client key -> deque[timestamp]
 _rl_global = deque()   # 全站 timestamp
 
 
 def _client_key(headers, fallback):
+    if not _peer_trusted(fallback):
+        # 對端不是我們認得的代理：它送什麼標頭都不算數，用 socket 對端分桶
+        return str(fallback)[:MAX_KEY_LEN]
     # 前面隔著 Cloudflare，socket 對端是通道不是使用者；真正的來源在這個標頭。
     # 標頭可以偽造，但偽造者是在幫自己分桶，對「一個人吃光額度」這個威脅足夠。
     key = (headers.get("CF-Connecting-IP")
@@ -197,8 +225,14 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args):
         # 預設會把每一筆請求印到 stderr 且帶反解主機名（慢）。這裡自己寫一行，
         # 不記查詢內容——座標是使用者位置，不該落在伺服器日誌裡。
-        sys.stderr.write("%s %s %s\n" % (self.log_date_time_string(),
-                                         self.command, self.path))
+        # 路徑也要遮（codex 紅隊 #5）：對外那條網址的亂碼段本身就是門票，
+        # 日誌若被集中收走就等於把門票一起送出去。只留前六個字元認得出是哪條。
+        path = self.path or ""
+        if len(path) > 8:
+            path = path[:7] + "…"
+        sys.stderr.write("%s %s %s peer=%s\n" % (self.log_date_time_string(),
+                                                 self.command, path,
+                                                 self.client_address[0]))
 
 
 def main():

@@ -25,6 +25,7 @@ CLI 每天在用、驗過的同一條，包一層 MCP 不該讓它長出第二�
 import json
 import os
 import subprocess
+import threading
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -62,22 +63,35 @@ MAX_RADIUS_M = 20000.0
 MAX_LIMIT = 100
 
 
-def _num(args, key, default=None, lo=None, hi=None):
-    """把參數轉成有限浮點數並夾在範圍內。
+# 同時能跑的子行程總數。一次批次八筆就是八個 python 一起開，
+# 沒有總量閘的話幾個併發批次就能把容器的 CPU 與 PID 吃光（codex 紅隊 #2）。
+_PROC_SEM = threading.Semaphore(
+    int(os.environ.get("TW_PARKING_MAX_PROCS", "4") or 4))
+
+
+def _num(args, key, default=None, lo=None, hi=None, integer=False):
+    """把參數轉成有限數字並檢查範圍。
 
     NaN 與 inf 一律拒絕：距離比較 `d > radius` 對 NaN 恆為 False，
     半徑餵 NaN 會讓整個距離過濾靜默失效、把全台的場都吐出來
     （2026-09-08 codex 紅隊實測 nan_radius／inf_radius 都有回值）。
+
+    型別也不放寬（同日紅隊 #2 第二輪）：JSON 有數字型別，字串的 "3" 與
+    布林的 true 都不是數字。舊版用 float() 硬轉，於是 "3" 收得下、
+    2.9 被 int() 截成 2——呼叫端以為自己要了三筆，實際拿到兩筆，
+    而且沒有任何人會發現。整數欄位要求整數，寧可回錯也不要默默改值。
     """
     raw = args.get(key, default)
     if raw is None or raw == "":
         raw = default
-    try:
-        v = float(raw)
-    except (TypeError, ValueError):
-        raise ValueError(f"{key} 不是數字")
+    # bool 是 int 的子類，True 會被算成 1——擋在最前面
+    if isinstance(raw, bool) or not isinstance(raw, (int, float)):
+        raise ValueError(f"{key} 必須是數字（不接受字串或布林值）")
+    v = float(raw)
     if v != v or v in (float("inf"), float("-inf")):
         raise ValueError(f"{key} 必須是有限數字")
+    if integer and not float(v).is_integer():
+        raise ValueError(f"{key} 必須是整數")
     if lo is not None and v < lo:
         raise ValueError(f"{key} 超出範圍（{lo}〜{hi}）")
     if hi is not None and v > hi:
@@ -91,14 +105,28 @@ def _find_parking(args):
     lat = _num(args, "lat", lo=-90.0, hi=90.0)
     lon = _num(args, "lon", lo=-180.0, hi=180.0)
     radius = _num(args, "radius", default=800, lo=1.0, hi=MAX_RADIUS_M)
-    limit = int(_num(args, "limit", default=5, lo=0, hi=MAX_LIMIT))
+    limit = int(_num(args, "limit", default=5, lo=0, hi=MAX_LIMIT, integer=True))
+    # include_moto 只收真正的布林。字串 "false" 在 Python 是真值，
+    # 舊版直接 args.get() 當條件用，等於「傳 false 反而打開」（紅隊 #2）。
+    moto = args.get("include_moto", False)
+    if moto is None:
+        moto = False
+    if not isinstance(moto, bool):
+        raise ValueError("include_moto 必須是布林值")
 
     cmd = [sys.executable, PARKING, "near", str(lat), str(lon),
            "--radius", str(radius), "--json"]
-    if args.get("include_moto"):
+    if moto:
         cmd.append("--include-moto")
 
-    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+    # 總量閘：等得到名額才開子行程，等太久就直說忙不過來，
+    # 不要讓請求無限排隊把執行緒全部佔住。
+    if not _PROC_SEM.acquire(timeout=30):
+        raise RuntimeError("目前查詢太多，請稍後再試")
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+    finally:
+        _PROC_SEM.release()
     if proc.returncode != 0:
         # 子程序的 stderr 會帶內部路徑與堆疊，對未認證的呼叫者是一個免費的
         # 錯誤預言機（2026-09-08 codex 紅隊 #5）。細節只寫自己的 stderr。
