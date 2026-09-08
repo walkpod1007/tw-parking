@@ -58,11 +58,40 @@ TOOLS = [
 ]
 
 
+MAX_RADIUS_M = 20000.0
+MAX_LIMIT = 100
+
+
+def _num(args, key, default=None, lo=None, hi=None):
+    """把參數轉成有限浮點數並夾在範圍內。
+
+    NaN 與 inf 一律拒絕：距離比較 `d > radius` 對 NaN 恆為 False，
+    半徑餵 NaN 會讓整個距離過濾靜默失效、把全台的場都吐出來
+    （2026-09-08 codex 紅隊實測 nan_radius／inf_radius 都有回值）。
+    """
+    raw = args.get(key, default)
+    if raw is None or raw == "":
+        raw = default
+    try:
+        v = float(raw)
+    except (TypeError, ValueError):
+        raise ValueError(f"{key} 不是數字")
+    if v != v or v in (float("inf"), float("-inf")):
+        raise ValueError(f"{key} 必須是有限數字")
+    if lo is not None and v < lo:
+        raise ValueError(f"{key} 超出範圍（{lo}〜{hi}）")
+    if hi is not None and v > hi:
+        raise ValueError(f"{key} 超出範圍（{lo}〜{hi}）")
+    return v
+
+
 def _find_parking(args):
-    lat = float(args["lat"])
-    lon = float(args["lon"])
-    radius = float(args.get("radius") or 800)
-    limit = int(args.get("limit", 5) or 0)
+    if not isinstance(args, dict):
+        raise ValueError("arguments 必須是物件")
+    lat = _num(args, "lat", lo=-90.0, hi=90.0)
+    lon = _num(args, "lon", lo=-180.0, hi=180.0)
+    radius = _num(args, "radius", default=800, lo=1.0, hi=MAX_RADIUS_M)
+    limit = int(_num(args, "limit", default=5, lo=0, hi=MAX_LIMIT))
 
     cmd = [sys.executable, PARKING, "near", str(lat), str(lon),
            "--radius", str(radius), "--json"]
@@ -71,14 +100,18 @@ def _find_parking(args):
 
     proc = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     if proc.returncode != 0:
-        raise RuntimeError(proc.stderr.strip() or "parking.py 失敗")
+        # 子程序的 stderr 會帶內部路徑與堆疊，對未認證的呼叫者是一個免費的
+        # 錯誤預言機（2026-09-08 codex 紅隊 #5）。細節只寫自己的 stderr。
+        sys.stderr.write("parking.py rc=%s stderr=%s\n"
+                         % (proc.returncode, proc.stderr.strip()[:2000]))
+        raise RuntimeError("查詢上游失敗")
 
     records = json.loads(proc.stdout or "[]")
     if limit > 0:
         records = records[:limit]
-    for r in records:
-        r["nav_url"] = ("https://www.google.com/maps/dir/?api=1&destination="
-                        f"{r.get('lat')},{r.get('lon')}")
+    # parking.py 的 --json 自己就會給 navigation_url 與 availability_status
+    # （2026-09-08 起）。這裡不再另外拼一個 nav_url——同一條網址掛兩個欄位名，
+    # 下游會不知道該信哪一個。
     return records
 
 
@@ -109,11 +142,19 @@ def _handle(msg):
                     "error": {"code": -32602, "message": f"未知的工具: {name}"}}
         try:
             records = _find_parking(params.get("arguments") or {})
-        except Exception as e:
-            # 工具層的失敗回成 isError 而不是 JSON-RPC error：讓模型看得到原因
-            # 並自己決定要不要換個半徑重試，而不是整條連線被判成壞掉。
+        except ValueError as e:
+            # 參數錯誤照實說：那是呼叫端自己送的值，講清楚它才改得動，
+            # 而且訊息內容全部由我們自己的 _num() 產生，不含內部細節。
             return {"jsonrpc": "2.0", "id": mid, "result": {
                 "content": [{"type": "text", "text": f"查詢失敗: {e}"}],
+                "isError": True}}
+        except Exception as e:
+            # 其餘一律固定字串：上游錯誤與堆疊不外流（codex 紅隊 #5）。
+            # 工具層的失敗回成 isError 而不是 JSON-RPC error：讓模型自己決定
+            # 要不要換個半徑重試，而不是整條連線被判成壞掉。
+            sys.stderr.write(f"tool error: {type(e).__name__}: {e}\n")
+            return {"jsonrpc": "2.0", "id": mid, "result": {
+                "content": [{"type": "text", "text": "查詢失敗: 上游暫時取不到資料"}],
                 "isError": True}}
         return {"jsonrpc": "2.0", "id": mid, "result": {
             "content": [{"type": "text",

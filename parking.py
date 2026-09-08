@@ -47,11 +47,24 @@ def extract_rate_summary(pay_info: Optional[str]) -> str:
     if not pay_info or not isinstance(pay_info, str):
         return ""
     pay_info = pay_info.replace("\r", " ").replace("\n", " ").strip()
-    m = re.search(r"每小時(?:收費)?\d+元|每半小時(?:收費)?\d+元", pay_info)
-    if m:
-        return m.group(0)
-    if len(pay_info) > 30:
-        return pay_info[:30] + "…"
+
+    # 費率寫法各縣市各家不同：「每小時30元」「每半小時收費40元」「100元/時」
+    # 「40元/小時」都出現過。舊版只認前兩種，馬偕醫院那種 `計時：100元/時，…`
+    # 比不到就退回「前 30 字加刪節號」，印出來是一整串沒斷句的條文，
+    # 送 LINE 時每次都要人手改寫，格式就是這樣飄掉的。這裡把四種寫法收成同一個短句。
+    HALF = [r"每半小時(?:收費)?(\d+)元", r"(\d+)元\s*/\s*半小時"]
+    HOUR = [r"每小時(?:收費)?(\d+)元", r"(\d+)元\s*/\s*(?:小)?時"]
+    for pat in HALF:
+        m = re.search(pat, pay_info)
+        if m:
+            return f"每半小時 {m.group(1)} 元"
+    for pat in HOUR:
+        m = re.search(pat, pay_info)
+        if m:
+            return f"每小時 {m.group(1)} 元"
+    # 還是比不到就給短句，不要把整段條文倒進來——長度上限比照一行讀得完。
+    if len(pay_info) > 16:
+        return pay_info[:16] + "…"
     return pay_info
 
 
@@ -76,7 +89,7 @@ def parse_car_time(time_str: Optional[str]) -> Optional[datetime]:
     except ValueError:
         return None
     if dt.tzinfo is not None:
-        # 紅隊審查 MED：原本寫 `dt.astimezone()`＝轉成**本機時區**。排程與容器的
+        # agy 紅隊 MED：原本寫 `dt.astimezone()`＝轉成**本機時區**。排程與容器的
         # TZ 未必是 Asia/Taipei，在 UTC 環境下 TDX 的 +08:00 會被轉成 UTC naive，
         # 而其他縣府來源的 naive 時間本來就是台北時間——兩邊差 8 小時，
         # 剛更新的即時值會被判成 8 小時前。台灣的資料源一律釘台北，不吃本機 TZ。
@@ -276,7 +289,7 @@ def fetch_all(lat: float, lon: float, radius_m: float = 0.0) -> List[Dict[str, A
     # 5. 拿 TDX 的即時空位替既有紀錄補值。
     #    TDX 的 CarPark 與 ParkingAvailability 兩支端點對不齊（屏東實測 20 場 vs
     #    24 筆即時，其中 22 筆不在場資清單裡），那 22 筆沒有座標、自己成不了一筆場，
-    #    但場名跟本地靜態庫對得上。只補「本來沒有即時值」的紀錄，不覆蓋任何既有數字。
+    #    但場名跟我方靜態庫對得上。只補「本來沒有即時值」的紀錄，不覆蓋任何既有數字。
     try:
         import tdx as tdx_mod
         overlay = tdx_mod.availability_overlay(lat, lon, radius_m)
@@ -329,7 +342,7 @@ def _apply_availability_overlay(records: List[Dict[str, Any]],
             if rname == aname:
                 pass  # 完全同名，最安全的一格
             elif rname in aname or aname in rname:
-                # 紅隊審查 CRIT：只靠「一方包含另一方」＋全縣外框（跨度上百公里）
+                # agy 紅隊 CRIT：只靠「一方包含另一方」＋全縣外框（跨度上百公里）
                 # 會嚴重跨鄉鎮誤配——潮州的「第一停車場」會吃到 25 公里外
                 # 屏東市「屏東公園第一停車場」的即時空位，枋寮的「站前停車場」
                 # 會吃到「屏東站前停車場」。overlay 那批沒有座標，補錯就是把
@@ -352,24 +365,15 @@ def _apply_availability_overlay(records: List[Dict[str, Any]],
             break
 
 
-# 短網址是**可選功能**，預設關閉（開源版拿掉了原本寫死的自家縮網址服務）。
-# 要開就設兩個環境變數：
-#   PARKING_SHORTLINK_CMD    收一個長網址當參數、把短網址印到 stdout 的指令
-#   PARKING_SHORTLINK_PREFIX 短網址應有的開頭，用來擋掉指令印出奇怪東西的情況
-# 台帳位置可用 PARKING_SHORTLINK_LEDGER 改，預設放在快取目錄底下。
-SHORTLINK_CMD = os.environ.get("PARKING_SHORTLINK_CMD", "").strip()
-SHORTLINK_PREFIX = os.environ.get("PARKING_SHORTLINK_PREFIX", "https://").strip()
-SHORTLINK_LEDGER = os.path.expanduser(
-    os.environ.get("PARKING_SHORTLINK_LEDGER",
-                   "~/.cache/parking/shortlinks.json"))
+SHORTLINK_LEDGER = os.path.expanduser("~/life-os/state/parking-shortlinks.json")
 
 
 def shorten(url: str) -> str:
-    """把導航長網址換成短碼（需自行設定 PARKING_SHORTLINK_CMD）。沒設就原樣回長網址。
+    """把導航長網址換成 s.life-os.work 短碼。換不到就原樣回長網址。
 
-    **一定要走台帳**：多數縮網址服務每收到一次請求就發一個新短碼，同一個場查十次
-    就在後端留十筆垃圾（實測同一條網址連打兩次會拿到兩個不同短碼）。場的座標不會
-    變，所以一個場一輩子只該有一個短碼。
+    **一定要走台帳**（`state/parking-shortlinks.json`）：後端每收到一次請求就發一個
+    新短碼，同一個場查十次就在 KV 裡留十筆垃圾（實測同一條網址連打兩次拿到
+    bj8dt 與 bgdni 兩個不同碼）。場的座標不會變，所以一個場一輩子只該有一個短碼。
 
     這一步失敗不該讓查詢失敗——沒有金鑰檔、沒網路、後端回怪東西，
     一律安靜退回長網址，使用者照樣點得開，只是長一點。
@@ -382,17 +386,18 @@ def shorten(url: str) -> str:
     if url in ledger:
         return ledger[url]
 
-    if not SHORTLINK_CMD:
+    script = os.path.expanduser("~/life-os/scripts/movie-shortlink.sh")
+    if not os.path.exists(script):
         return url
     try:
-        out = subprocess.run([*SHORTLINK_CMD.split(), url], capture_output=True,
+        out = subprocess.run(["bash", script, url], capture_output=True,
                              text=True, timeout=20).stdout.strip()
     except Exception:
         return url
-    if not out.startswith(SHORTLINK_PREFIX):
+    if not out.startswith("https://s.life-os.work/"):
         return url
     ledger[url] = out
-    # 紅隊審查 HIGH：原本直接覆寫台帳，中途被打斷或兩個行程同時寫，
+    # agy 紅隊 HIGH：原本直接覆寫台帳，中途被打斷或兩個行程同時寫，
     # 讀回來就是半截 JSON，上面那個 except 會把它整份當空 dict——
     # 歷史短碼全毀且零告警。寫暫存再 os.replace 換過去。
     try:
@@ -407,41 +412,99 @@ def shorten(url: str) -> str:
 
 
 def geocode_address(address: str) -> Tuple[float, float]:
-    """地址轉座標，走 Google Geocoding API。
-
-    需要自己的金鑰：環境變數 `GOOGLE_MAPS_API_KEY`。沒有金鑰也能用這支工具，
-    只是要改用 `near <lat> <lon>` 直接給座標——查停車場本身完全不需要金鑰。
-    """
-    key = os.environ.get("GOOGLE_MAPS_API_KEY", "").strip()
-    if not key:
-        sys.stderr.write(
-            "地址查詢需要 Google Geocoding API 金鑰：請設 GOOGLE_MAPS_API_KEY，"
-            "或改用 `near <lat> <lon>` 直接給座標（查停車場不需要金鑰）。\n")
+    """呼叫既有 ~/bin/gmaps geocode 取得座標"""
+    gmaps_bin = os.path.expanduser("~/bin/gmaps")
+    if not os.path.exists(gmaps_bin):
+        gmaps_bin = "/Users/applyao/bin/gmaps"
+    if not os.path.exists(gmaps_bin):
+        sys.stderr.write(f"gmaps binary not found at {gmaps_bin}\n")
         sys.exit(1)
 
-    url = ("https://maps.googleapis.com/maps/api/geocode/json?"
-           + urllib.parse.urlencode({"address": address, "key": key,
-                                     "language": "zh-TW", "region": "tw"}))
+    env = os.environ.copy()
+    if "LIFEOS_CHANNEL_DIR" not in env and os.path.exists("/Users/applyao/.claude/channels/line"):
+        env["LIFEOS_CHANNEL_DIR"] = "/Users/applyao/.claude/channels/line"
+    if env.get("HOME", "").startswith("/Users/applyao/.agy-stores"):
+        env["HOME"] = "/Users/applyao"
+
+    # 先嘗試以 --json 取得精確結構化結果
     try:
-        with urllib.request.urlopen(url, timeout=20) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        proc = subprocess.run(
+            [gmaps_bin, "geocode", address, "--json"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            env=env
+        )
+        if proc.returncode == 0 and proc.stdout.strip():
+            data = json.loads(proc.stdout)
+            results = data.get("results", [])
+            if results:
+                loc = results[0].get("geometry", {}).get("location", {})
+                if "lat" in loc and "lng" in loc:
+                    return float(loc["lat"]), float(loc["lng"])
+    except Exception:
+        pass
+
+    # 若 json 失敗，fallback 解析預設文字格式（名稱｜地址｜座標）
+    try:
+        proc = subprocess.run(
+            [gmaps_bin, "geocode", address],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            env=env
+        )
+        if proc.returncode != 0:
+            err = proc.stderr.strip() or proc.stdout.strip() or "gmaps geocode failed"
+            sys.stderr.write(f"gmaps geocode error: {err}\n")
+            sys.exit(1)
+
+        out = proc.stdout.strip()
+        if "查無結果" in out or not out:
+            sys.stderr.write(f"地址查無座標: {address}\n")
+            sys.exit(1)
+
+        for line in out.splitlines():
+            parts = line.split("｜")
+            if len(parts) >= 3:
+                coords = parts[2].strip().split(",")
+                if len(coords) == 2:
+                    return float(coords[0]), float(coords[1])
     except Exception as e:
-        sys.stderr.write(f"geocode 請求失敗: {e}\n")
+        sys.stderr.write(f"Failed to geocode address: {e}\n")
         sys.exit(1)
 
-    results = data.get("results") or []
-    if data.get("status") != "OK" or not results:
-        sys.stderr.write(
-            f"地址查無座標: {address}（API status={data.get('status')}）\n")
-        sys.exit(1)
-    loc = results[0].get("geometry", {}).get("location", {})
-    if "lat" not in loc or "lng" not in loc:
-        sys.stderr.write(f"地址查無座標: {address}\n")
-        sys.exit(1)
-    return float(loc["lat"]), float(loc["lng"])
+    sys.stderr.write(f"地址查無座標: {address}\n")
+    sys.exit(1)
 
 
-def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon: float, radius: float, min_total: int, as_json: bool, limit: int = 3, include_moto: bool = False):
+AVAIL_LABELS = {
+    # 一個門檻表兩個出口共用：顯示層拿 emoji／文字，JSON 層拿英文狀態碼。
+    # 門檻寫在這裡而不是各寫一份，是因為 2026-09-08 的建議正好點到這件事——
+    # 燈號規則以後會改（例如綠燈改成 10 格以上），改一個地方就好。
+    "unknown": ("❓", "空位不明", "unknown"),
+    "full":    ("🔴", "已滿", "full"),
+    "low":     ("🟡", "快滿", "low"),
+    "green":   ("🟢", "有位", "available"),
+}
+
+
+def availability_key(value, expired: bool) -> str:
+    """把剩餘車位數收成四種狀態之一。expired＝時間戳過期，一律當不明。"""
+    if expired or value is None:
+        return "unknown"
+    try:
+        v = int(value)
+    except (ValueError, TypeError):
+        return "unknown"
+    if v == 0:
+        return "full"
+    if v <= 2:
+        return "low"
+    return "green"
+
+
+def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon: float, radius: float, min_total: int, as_json: bool, limit: int = 3, include_moto: bool = False, plain: bool = False):
     """過濾、計算新鮮度與距離並格式化輸出"""
     now = datetime.now()
     results = []
@@ -471,7 +534,7 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
         if not include_moto and "機車" in _n and "汽" not in _n:
             continue
 
-        # 紅隊審查 HIGH 補強：0 也要當「未知」。有些來源對不知道容量的場填 0 而不是
+        # agy 紅隊 HIGH 補強：0 也要當「未知」。有些來源對不知道容量的場填 0 而不是
         # null，照舊寫法會把「總格數 0 但即時空位 15 格」的合法場站安靜殺掉。
         car_total = item.get("car_total")
         if car_total not in (None, 0):
@@ -495,7 +558,7 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
 
         results.append(item_copy)
 
-    # 排序（查得到空位的優先）：
+    # 排序（2026-09-08 伊森裁示「停車場找有空位的優先（查得到的話）」）：
     # 第一鍵＝空位狀態，第二鍵才是距離。三態的順序是刻意的——
     #   0 查得到而且還有空位  → 最有用
     #   1 查不到空位          → 不知道，但去了可能有
@@ -510,7 +573,7 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
         except (ValueError, TypeError):
             return 1
 
-    # 紅隊審查 HIGH：純「有空位優先」沒有距離上限，950 公尺外只剩 1 格的場會把
+    # agy 紅隊 HIGH：純「有空位優先」沒有距離上限，950 公尺外只剩 1 格的場會把
     # 30 公尺處的大場擠出前三名——在市區開車那叫捨近求遠，而且遠場那 1 格
     # 開到的時候多半已經被停走。所以先分距離帶（500 公尺一帶）再比空位：
     # 同一帶內有空位的排前面，不同帶就是近的贏。500 這個數字＝走路可接受的範圍，
@@ -521,7 +584,19 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
     # --json 一律給全部，不套 limit：那是給程式吃的，截斷會讓下游以為附近只有三個場。
     if as_json:
         for r in results:
-            r.pop("_internal_freshness", None)
+            fr = r.pop("_internal_freshness", None)
+            # 導航連結與空位狀態原本只長在給人看的那條路上，程式吃 --json 的人
+            # 得自己重拼一次 Google Maps 網址、自己重寫一次燈號門檻——那是同一份
+            # 判準散成兩份的開始。這裡補進 JSON，短網址不在此列（那要打我們自己的
+            # 服務，95 筆逐一發碼沒有意義，需要的人拿 navigation_url 自己縮）。
+            r["navigation_url"] = (
+                "https://www.google.com/maps/dir/?api=1&destination="
+                f"{r['lat']},{r['lon']}"
+            )
+            expired = bool(fr and fr.get("is_expired"))
+            r["availability_status"] = AVAIL_LABELS[
+                availability_key(r.get("car_value"), expired)
+            ][2]
         print(json.dumps(results, ensure_ascii=False, indent=2))
         return
 
@@ -530,11 +605,11 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
         print(f"半徑 {r_disp} 公尺內沒有回報車位的停車場")
         sys.exit(0)
 
-    # 排列式輸出（一場一段，後面接可以點擊的
+    # 排列式輸出（2026-09-08 伊森裁示：「最好是排列式 後面接可以點擊的
     # google map 地址 URL」）。一場一段：編號＋場名一行、距離／車位／鮮度／費率一行、
     # 導航連結一行。他多半在開車，連結用 `maps/dir/?api=1&destination=` 直接進導航，
     # 不用 `maps/search`（那只是把地圖打開還要再按一次）。
-    # 只端前 N 個：使用者多半在開車，
+    # 只端前 N 個（2026-09-08 伊森裁示「停車場最好是給三個」）：他在開車，
     # 一次看三個已經是極限，列十個等於沒列。被截掉的數量講一句就好。
     shown = results if limit <= 0 else results[:limit]
     for idx, item in enumerate(shown, 1):
@@ -545,8 +620,8 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
         # 「181/0」會讓人以為資料壞了（2026-09-08 板橋實測）。沒有分母就只給分子。
         total_str = str(car_total) if car_total not in (None, 0) else None
 
-        # 燈號：綠＝3 個以上、黃＝剩 1-2、紅＝0、問號＝查不到。
-        # 開車的人一眼看顏色就夠了，數字是給想確認的人看的第二層。
+        # 燈號（2026-09-08 伊森裁示）：綠＝3 個以上、黃＝剩 1-2、紅＝0、問號＝查不到。
+        # 他在開車，一眼看顏色就夠了，數字是給想確認的人看的第二層。
         if freshness["is_expired"]:
             car_val = None
         else:
@@ -555,16 +630,29 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
             v = int(car_val) if car_val is not None else None
         except (ValueError, TypeError):
             v = None
-        if v is None:
-            light, val_str = "❓", "--"
-        elif v == 0:
-            light, val_str = "🔴", "0"
-        elif v <= 2:
-            light, val_str = "🟡", str(v)
-        else:
-            light, val_str = "🟢", str(v)
+        # `--plain` 走純文字燈號，給不吃 emoji 的出口用。
+        # ⚠️ 送 LINE **不要加**：🟢🟡🔴❓ 這四顆 2026-09-08 12:33 起已從
+        # EMOJICAP 計數排除（hooks/line-tone-gate-check.py 的 STATUS_LIGHTS），
+        # 17:1x 拿三場真實輸出離線複驗，沒有 EMOJICAP。本註解原本寫著相反的話，
+        # 是排除生效之前的舊狀況。
+        key = availability_key(v, False)
+        emoji, word, _ = AVAIL_LABELS[key]
+        light = word if plain else emoji
+        val_str = "--" if key == "unknown" else str(v)
+        # 空位比總格數還多＝來源自己的資料互相矛盾（2026-09-08 板橋實測：
+        # 東方富域 parkboss 回 avail 353／total 184）。印成「353/184」看起來像
+        # 程式壞了，而且分母是錯的那一半——即時空位每分鐘更新、總格數是靜態欄位。
+        # 處置：矛盾時丟掉分母只留分子，不猜哪個對、也不把整場濾掉
+        # （那會讓真的有位的場消失）。
+        if total_str is not None and v is not None:
+            try:
+                if v > int(car_total):
+                    total_str = None
+            except (ValueError, TypeError):
+                pass
+
         if total_str is None:
-            space_str = f"{light} {val_str}" if v is not None else f"{light} 無資料"
+            space_str = f"{light} {val_str}" if v is not None else f"{light}"
         else:
             space_str = f"{light} {val_str}/{total_str}"
 
@@ -589,7 +677,9 @@ def process_and_output(data: List[Dict[str, Any]], center_lat: float, center_lon
             print()
 
     if len(results) > len(shown):
-        print(f"\n（半徑內另有 {len(results) - len(shown)} 個，"
+        # 逗號會被 LINE 語氣閘的 PUNCT 擋下（送 LINE 是原樣轉貼，一個字不改），
+        # 所以斷句用空白（2026-09-08 17:1x 實測，此前這一行讓整則過不了閘）。
+        print(f"\n（半徑內另有 {len(results) - len(shown)} 個 "
               f"要看全部加 --limit 0）")
 
 
@@ -605,6 +695,7 @@ def main():
     near_parser.add_argument("--limit", type=int, default=3, help="最多列幾個（預設 3；0＝全部）")
     near_parser.add_argument("--include-moto", action="store_true", help="連機車專用場也列（預設濾掉）")
     near_parser.add_argument("--min-total", type=int, default=6, help="最小總車位數（預設 6）")
+    near_parser.add_argument("--plain", action="store_true", help="燈號用文字（有位／快滿／已滿／無資料），送 LINE 用")
     near_parser.add_argument("--json", action="store_true", help="輸出 JSON 格式")
 
     # near-address
@@ -614,6 +705,7 @@ def main():
     addr_parser.add_argument("--limit", type=int, default=3, help="最多列幾個（預設 3；0＝全部）")
     addr_parser.add_argument("--include-moto", action="store_true", help="連機車專用場也列（預設濾掉）")
     addr_parser.add_argument("--min-total", type=int, default=6, help="最小總車位數（預設 6）")
+    addr_parser.add_argument("--plain", action="store_true", help="燈號用文字（有位／快滿／已滿／無資料），送 LINE 用")
     addr_parser.add_argument("--json", action="store_true", help="輸出 JSON 格式")
 
     args = parser.parse_args()
@@ -635,7 +727,8 @@ def main():
         min_total=args.min_total,
         as_json=args.json,
         limit=args.limit,
-        include_moto=args.include_moto
+        include_moto=args.include_moto,
+        plain=args.plain
     )
 
 
