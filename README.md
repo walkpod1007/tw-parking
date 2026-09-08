@@ -55,6 +55,30 @@ python3 parking.py near-address "<地址或地標>"      # 需要 Google 金鑰�
 排序規則：先分 500 公尺帶，帶內優先給查得到空位的，再按距離。「已知 0 格」排在
 「不知道」後面——已知客滿比未知更糟，去了一定白跑。
 
+## 給 AI 助理用（MCP）
+
+`mcp_server.py` 把這支工具包成一台 MCP server，走 stdio。**它在你自己的機器上跑**，
+不是連到誰的伺服器：MCP client 把它當子程序啟動，查詢直接從你的機器打向資料源。
+
+Claude Desktop 之類的設定檔寫法：
+
+```json
+{
+  "mcpServers": {
+    "tw-parking": {
+      "command": "python3",
+      "args": ["/絕對路徑/tw-parking/mcp_server.py"]
+    }
+  }
+}
+```
+
+提供一個工具 `find_parking`，參數 `lat`、`lon`、`radius`、`limit`、`include_moto`，
+回傳結構化的停車場清單（含 `nav_url` 導航連結）。沒有第三方套件依賴。
+
+會執行 shell 的代理（Claude Code、Codex CLI、Cursor 之類）其實不必走 MCP，
+直接呼叫 `python3 parking.py near <lat> <lon> --json` 更省事。
+
 ## 選用設定（都不設也能跑）
 
 | 環境變數 | 作用 |
