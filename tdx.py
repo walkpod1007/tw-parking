@@ -33,8 +33,25 @@ API_BASE = "https://tdx.transportdata.tw/api/basic/v1/Parking/OffStreet"
 # TDX 憑證：先看環境變數 TDX_CLIENT_ID / TDX_CLIENT_SECRET，沒有才讀憑證檔。
 # 憑證檔位置可用 TDX_CRED_FILE 改；預設放在 ~/.config/parking/tdx.env。
 # 兩個都沒有也能跑——TDX 只是第四層來源，前三層公開端點不需要任何金鑰。
-CRED_FILE = os.path.expanduser(
-    os.environ.get("TDX_CRED_FILE", "~/.config/parking/tdx.env"))
+# 預設會依序找這幾個位置，第一個存在的就用。多一條 ~/.secrets/tdx.env 是因為
+# 2026-09-08 註冊拿到的金鑰落在那裡，而程式只找 ~/.config/parking/tdx.env，
+# 結果 TDX 這一層整天靜默沒出力（苗栗與金門因此一直是零場，看起來像涵蓋問題，
+# 實際是憑證放在程式沒去找的地方）。TDX_CRED_FILE 指定時只用指定的那個。
+_CRED_CANDIDATES = ["~/.config/parking/tdx.env", "~/.secrets/tdx.env"]
+
+
+def _pick_cred_file() -> str:
+    env = os.environ.get("TDX_CRED_FILE", "").strip()
+    if env:
+        return os.path.expanduser(env)
+    for c in _CRED_CANDIDATES:
+        path = os.path.expanduser(c)
+        if os.path.exists(path):
+            return path
+    return os.path.expanduser(_CRED_CANDIDATES[0])
+
+
+CRED_FILE = _pick_cred_file()
 CACHE_DIR = os.path.expanduser(
     os.environ.get("PARKING_CACHE_DIR", "~/.cache/parking") + "/tdx")
 
