@@ -27,13 +27,18 @@ from typing import Optional, Dict, Any, List
 # **放寬只對名單內的主機生效**——寫成名單而不是全域關掉，是為了讓以後新增的來源
 # 不會安靜地跟著吃 CERT_NONE；新來源要嘛憑證是好的，要嘛得有人親手把它加進這張名單。
 RELAXED_TLS_HOSTS = {
-    "www-ws.pthg.gov.tw",
-    "ws-tm.cyhg.gov.tw",
-    "chpark.chcg.gov.tw",
-    "trafficweb.ttcpb.gov.tw",
-    "parking.nantou.gov.tw",
-    "traffic.hl.gov.tw",
-    "zytparking.com",
+    "www-ws.pthg.gov.tw",       # CERTIFICATE_VERIFY_FAILED: Missing Subject Key Identifier
+    "ws-tm.cyhg.gov.tw",        # DH_KEY_TOO_SMALL
+    "chpark.chcg.gov.tw",       # 同 pthg
+    "trafficweb.ttcpb.gov.tw",  # 同 pthg
+    "parking.nantou.gov.tw",    # 同 pthg
+    "zytparking.com",           # ⚠️ 只有 :35170 壞，443 是好的——見下方註解
+    # 2026-09-08 18:3x 逐台重測（codex 紅隊要求覆核）：traffic.hl.gov.tw 現在
+    # 嚴格驗證過得去，已從名單移除。zytparking.com 一度也被我判成可以移除，
+    # 那是量錯了——我對 443 測，澎湖那支實際打的是 **:35170**，那個埠的憑證鏈
+    # 不完整（443 通過、35170 CERTIFICATE_VERIFY_FAILED）。測放寬名單要對
+    # 「程式真正會連的那個埠」測，不是對主機名預設埠測。
+    # 這張名單要定期重測——政府站換憑證之後就不該再放寬。
 }
 
 
@@ -72,6 +77,10 @@ def _cache_path(key: str) -> str:
     return os.path.join(CACHE_DIR, hashlib.sha256(key.encode()).hexdigest()[:32] + ".bin")
 
 
+# 單一上游回應的大小上限。全台最大的那份靜態場資也只有幾 MB，16 MiB 是寬鬆的天花板。
+MAX_RESPONSE_BYTES = 16 * 1024 * 1024
+
+
 def fetch_url(
     url: str,
     method: str = "GET",
@@ -99,7 +108,13 @@ def fetch_url(
     with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
         if resp.status != 200:
             raise urllib.error.HTTPError(url, resp.status, resp.reason, resp.headers, None)
-        body = resp.read()
+        # 上游回應大小要有上限（2026-09-08 codex 紅隊 #3）：名單內那幾個政府站
+        # 是放寬 TLS 驗證進來的，等於「誰在中間都可能改內容」，沒有上限的話
+        # 一個假回應就能餵爆我們的記憶體。多讀一個位元組是為了分辨「剛好等於上限」
+        # 與「超過上限」，超過就直接失敗，不要靜默截斷成半份 JSON。
+        body = resp.read(MAX_RESPONSE_BYTES + 1)
+        if len(body) > MAX_RESPONSE_BYTES:
+            raise ValueError(f"上游回應超過 {MAX_RESPONSE_BYTES} bytes：{url}")
 
     if CACHE_TTL > 0:
         # 暫存檔加改名：直接覆寫的話，另一個行程可能讀到寫到一半的內容。
@@ -646,3 +661,43 @@ ADAPTERS = {
     "nantou": fetch_nantou,
     "penghu": fetch_penghu,
 }
+
+# 每個縣市 adapter 的服務範圍（縣界的粗略外接矩形，仿 tdx.CITY_BOXES 的做法）。
+# 為什麼要這張表（2026-09-08 codex 紅隊 #3）：舊版每次查詢都把八個 adapter 全部叫醒，
+# 在台北查一個停車位也會去打彰化、雲林、花蓮、台東、南投、澎湖六個縣政府的端點——
+# 台東那支還會依場站數再開十條執行緒逐場查。對上游是白白的放大，對自己是白等。
+# 判定只做「查詢圓有沒有碰到這個框」，框寬鬆、寧可多叫醒也不要漏，不是行政區判定。
+# static_store 讀的是本地靜態檔、不打網路，永遠跑，所以不列在這裡。
+ADAPTER_BOXES = {
+    # slug: (lat_min, lat_max, lon_min, lon_max)
+    "pthg_hengchun": (21.85, 22.20, 120.65, 120.95),
+    "chcg":          (23.70, 24.22, 120.22, 120.78),
+    "yunlin":        (23.42, 23.90, 120.08, 120.75),
+    "hualien":       (22.95, 24.40, 121.05, 121.90),
+    "taitung":       (22.25, 23.50, 120.72, 121.68),
+    "nantou":        (23.40, 24.28, 120.58, 121.38),
+    "penghu":        (23.15, 23.85, 119.28, 119.75),
+}
+# 邊界安全邊際：查詢半徑換成度數之外再加這麼多，避免縣界附近漏掉隔壁縣的場。
+# 0.15 度約 16 公里——比我們允許的最大半徑（20 km）小，所以半徑本身也要一起算進去。
+BOX_MARGIN_DEG = 0.15
+
+
+def adapters_for(lat: float, lon: float, radius_m: float = 0.0):
+    """回傳這個座標該叫醒的 adapter（slug → func）。
+
+    沒有範圍框的 adapter 一律留著（例如讀本地靜態檔的 static_store），
+    新增來源時忘了填框也只會退回舊行為，不會安靜地被跳過。
+    """
+    margin = BOX_MARGIN_DEG + (radius_m or 0.0) / 111000.0
+    picked = {}
+    for slug, func in ADAPTERS.items():
+        box = ADAPTER_BOXES.get(slug)
+        if box is None:
+            picked[slug] = func
+            continue
+        lat_min, lat_max, lon_min, lon_max = box
+        if (lat_min - margin <= lat <= lat_max + margin
+                and lon_min - margin <= lon <= lon_max + margin):
+            picked[slug] = func
+    return picked

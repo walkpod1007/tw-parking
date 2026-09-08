@@ -258,9 +258,12 @@ def fetch_all(lat: float, lon: float, radius_m: float = 0.0) -> List[Dict[str, A
 
     # 2. 併行跑所有縣市 adapter
     adapter_records: List[Dict[str, Any]] = []
+    # 只叫醒服務範圍碰得到這次查詢的 adapter（sources.adapters_for）。
+    # 在台北查停車位不必去打澎湖縣政府——那是對上游的放大，對自己也只是白等。
+    picked = sources.adapters_for(lat, lon, radius_m)
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         future_to_source = {
-            executor.submit(func): slug for slug, func in sources.ADAPTERS.items()
+            executor.submit(func): slug for slug, func in picked.items()
         }
         for future in concurrent.futures.as_completed(future_to_source):
             slug = future_to_source[future]
