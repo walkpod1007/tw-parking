@@ -54,6 +54,24 @@ def create_ssl_context(url: str = "") -> ssl.SSLContext:
     return ctx
 
 
+# ── 回應快取（2026-09-08 補）─────────────────────────────────────────
+# 為什麼要有：`fetch_all` 每查一次就併行打全部 10 個縣府 adapter，不管座標在哪個縣。
+# 在台北查一次，屏東、澎湖、花蓮的機器也各被打一發。那些是縣市政府的伺服器，
+# 不是設計來承受這種扇出的。TTL 只給 60 秒——即時空位本來就以分鐘計，
+# 快取久了會拿舊數字當現況，那是這支工具最不能犯的錯。
+#
+# 刻意不做的事：不快取失敗。抓失敗要下一次真的重試，把錯誤也存 60 秒
+# 等於把一次網路抖動放大成一分鐘的假性缺料。
+CACHE_DIR = os.path.expanduser(
+    os.environ.get("PARKING_CACHE_DIR", "~/.cache/parking") + "/http")
+CACHE_TTL = int(os.environ.get("PARKING_HTTP_TTL", "60"))
+
+
+def _cache_path(key: str) -> str:
+    import hashlib
+    return os.path.join(CACHE_DIR, hashlib.sha256(key.encode()).hexdigest()[:32] + ".bin")
+
+
 def fetch_url(
     url: str,
     method: str = "GET",
@@ -61,6 +79,18 @@ def fetch_url(
     headers: Optional[Dict[str, str]] = None,
     timeout: int = 20,
 ) -> bytes:
+    import time
+
+    cache_key = f"{method} {url} {data or b''!r}"
+    path = _cache_path(cache_key)
+    if CACHE_TTL > 0:
+        try:
+            if time.time() - os.path.getmtime(path) < CACHE_TTL:
+                with open(path, "rb") as f:
+                    return f.read()
+        except OSError:
+            pass   # 沒有快取或讀不到就照常出去抓
+
     h = {"User-Agent": "Mozilla/5.0"}
     if headers:
         h.update(headers)
@@ -69,7 +99,19 @@ def fetch_url(
     with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
         if resp.status != 200:
             raise urllib.error.HTTPError(url, resp.status, resp.reason, resp.headers, None)
-        return resp.read()
+        body = resp.read()
+
+    if CACHE_TTL > 0:
+        # 暫存檔加改名：直接覆寫的話，另一個行程可能讀到寫到一半的內容。
+        try:
+            os.makedirs(CACHE_DIR, exist_ok=True)
+            tmp = f"{path}.tmp.{os.getpid()}"
+            with open(tmp, "wb") as f:
+                f.write(body)
+            os.replace(tmp, path)
+        except OSError:
+            pass   # 快取寫不進去不該讓查詢失敗
+    return body
 
 
 def sanitize(rec: Dict[str, Any]) -> Dict[str, Any]:
@@ -99,7 +141,7 @@ def sanitize(rec: Dict[str, Any]) -> Dict[str, Any]:
 # ── 只有地址沒有座標的三個來源 ───────────────────────────────────────────
 # 屏東縣路外、嘉義縣、新竹縣三份政府開放資料只給地址不給經緯度（2026-09-08 實測欄位確認），
 # 距離查詢用不到。做法是把它們抓下來一次、地址轉成座標、存進 static-store.json，
-# 之後查詢直接讀本地那份，零 API 呼叫。
+# 之後查詢直接讀本地那份，零 API 呼叫（伊森 2026-09-08 11:29 裁示「我們自己建個庫沒問題」）。
 # `*_raw()` 只負責抓與正規化欄位（含 address），轉座標與存檔在 build-static-store.py。
 
 STATIC_STORE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static-store.json")
