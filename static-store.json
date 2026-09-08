@@ -1,0 +1,3514 @@
+{
+ "version": 1,
+ "updated": "2026-09-08 11:42:44",
+ "records": [
+  {
+   "name": "大尖山A停車場（停二十）",
+   "address": "恆春鎮墾丁路與公園路口",
+   "car_total": 165,
+   "pay_info": "大型車每半小時收費新臺幣50元；小型車每半小時收費新臺幣25元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.9459705,
+   "lon": 120.7925735,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大尖山B停車場（停九）",
+   "address": "恆春鎮墾丁路中油加油站旁",
+   "car_total": 123,
+   "pay_info": "大型車每半小時收費新臺幣50元；小型車每半小時收費新臺幣25元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.946198,
+   "lon": 120.7928662,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大灣路停車場（停十）",
+   "address": "恆春鎮大灣路187號旁",
+   "car_total": 79,
+   "pay_info": "小型車每半小時收費新臺幣25元；身心障礙者停車優惠3小時免費，超過3小時半價；小型車月租收費，里民月租每月1500元，里民身障每月月租750元。",
+   "source": "pthg_offstreet",
+   "lat": 21.9447248,
+   "lon": 120.7970928,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大灣路臨時停車場（停十一）",
+   "address": "恆春鎮大灣路八寶公主廟旁空地",
+   "car_total": 57,
+   "pay_info": "小型車每半小時收費新臺幣25元；身心障礙者停車優惠3小時免費，超過3小時半價；小型車月租收費，里民月租每月1500元，里民身障每月月租750元。",
+   "source": "pthg_offstreet",
+   "lat": 21.94258,
+   "lon": 120.7988435,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "墾丁臨時停車場",
+   "address": "恆春鎮公園路（墾丁國家公園牌樓往內200公尺）",
+   "car_total": 174,
+   "pay_info": "小型車每半小時收費新臺幣15元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.9502801,
+   "lon": 120.8055549,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "和平巷臨時停車場",
+   "address": "恆春鎮和平巷91號旁",
+   "car_total": 28,
+   "pay_info": "小型車每半小時收費新臺幣10元；身心障礙者停車優惠3小時免費，超過3小時半價；小型車月租收費，里民月租每月1500元，里民身障每月月租750元。",
+   "source": "pthg_offstreet",
+   "lat": 21.9473306,
+   "lon": 120.7995253,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "社頂公園停車場",
+   "address": "恆春鎮社興路172號旁",
+   "car_total": 39,
+   "pay_info": "大型車當日計次收費新臺幣100元；小型車當日計次收費新臺幣50元；機車當日計次收費新臺幣10元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.957968,
+   "lon": 120.817616,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "龍鑾潭停車場",
+   "address": "恆春鎮草潭路與龍泉路交叉旁",
+   "car_total": 50,
+   "pay_info": "大型車當日計次收費新臺幣100元；小型車當日計次收費新臺幣50元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.9751205,
+   "lon": 120.7335053,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "關山停車場",
+   "address": "恆春鎮關山牌樓旁",
+   "car_total": 91,
+   "pay_info": "大型車當日計次收費新臺幣100元；小型車當日計次收費新臺幣50元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 22.0006536,
+   "lon": 120.7447774,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停18機車停車場",
+   "address": "恆春鎮墾丁路210號旁空地",
+   "car_total": null,
+   "pay_info": "機車當日計次收費新臺幣20元。",
+   "source": "pthg_offstreet",
+   "lat": 21.9456358,
+   "lon": 120.7976558,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "鵝鑾鼻第二停車場",
+   "address": "屏東縣恆春鎮鵝鑾鼻燈塔旁",
+   "car_total": 31,
+   "pay_info": "1.大客車次100元（當日），隔日另計\\n2.小型車每次50元（當日），隔日另計\\n3.機車每次20元（當日），隔日另計",
+   "source": "pthg_offstreet",
+   "lat": 21.9022339,
+   "lon": 120.8526297,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "鵝鑾鼻公園停車場",
+   "address": "屏東縣恆春鎮燈塔路249號",
+   "car_total": 99,
+   "pay_info": "計次收費，大型車60元、小型車40元、機車10元",
+   "source": "pthg_offstreet",
+   "lat": 21.904652,
+   "lon": 120.8519847,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "國立海洋生物博物館遊客停車場",
+   "address": "屏東縣車城鄉後灣路2號",
+   "car_total": 1715,
+   "pay_info": "大客車每次收費100元；小型車每次收費50元；機車每次收費20元；腳踏自行車及身心障礙者持專用停車證免費",
+   "source": "pthg_offstreet",
+   "lat": 22.045453,
+   "lon": 120.6983485,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "恆春鎮停一立體停車場",
+   "address": "屏東縣恆春鎮北門路39巷28號",
+   "car_total": 216,
+   "pay_info": "小型車10元/時，月租1600元",
+   "source": "pthg_offstreet",
+   "lat": 22.0054323,
+   "lon": 120.7458211,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "恆春鎮農會停車場",
+   "address": "屏東縣恆春鎮農會旁停車場",
+   "car_total": 69,
+   "pay_info": "小型車每半小時10元，當日最高上限200元；小型車月租每月1000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.0008528,
+   "lon": 120.7438234,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "樂活南灣遊憩中心停車場",
+   "address": "屏東縣恆春鎮南灣路223號",
+   "car_total": 130,
+   "pay_info": "1.大客車：平、假日100元/時\\n2.汽車平日40元/時、假日50元/時\\n3.機車：平日20元/時、假日30元/時4.身心障礙停車收費方式採半價及人工收費",
+   "source": "pthg_offstreet",
+   "lat": 21.9599524,
+   "lon": 120.7634276,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "貓鼻頭公園停車場",
+   "address": "恆春鎮恆春鎮下泉路100號",
+   "car_total": 105,
+   "pay_info": "計次收費，大型車60元、小型車40元、機車10元",
+   "source": "pthg_offstreet",
+   "lat": 21.9221896,
+   "lon": 120.7380442,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "白砂停車場",
+   "address": "屏東縣恆春鎮白砂路13-6號旁空地",
+   "car_total": 21,
+   "pay_info": "大型車每半小時收費新臺幣50元；小型車每半小時收費新臺幣15元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.9359125,
+   "lon": 120.7202588,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "白沙灣停車場",
+   "address": "恆春鎮墾丁白砂路31號",
+   "car_total": 94,
+   "pay_info": "大客車200元/次，小客車100元/次，機車40元/次（皆自動收費）",
+   "source": "pthg_offstreet",
+   "lat": 21.9363184,
+   "lon": 120.7154542,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "大路關遊樂區停車場",
+   "address": "高樹鄉廣興村中正路188號",
+   "car_total": 852,
+   "pay_info": "計次收費，每次50元",
+   "source": "pthg_offstreet",
+   "lat": 22.7375198,
+   "lon": 120.626426,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "高樹鄉圖書館地下停車場",
+   "address": "高樹鄉興中路330號",
+   "car_total": 114,
+   "pay_info": "小型車10元/時，身障不收費",
+   "source": "pthg_offstreet",
+   "lat": 22.826304,
+   "lon": 120.6008213,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "坤鋒路外停車場",
+   "address": "長治鄉德成村復華街550號",
+   "car_total": 41,
+   "pay_info": "1.計時收費：平日半小時10元、例假日半小時15元，超過3小時以計次收費2.計次收費：平日50元，假日100元，隔日另計",
+   "source": "pthg_offstreet",
+   "lat": 22.6916485,
+   "lon": 120.5590724,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "六堆園區遊客停車場",
+   "address": "屏東縣內埔鄉建興村信義路588號",
+   "car_total": 297,
+   "pay_info": "大型車60元/次，小型車50元/次，機車、腳踏車及身障不收費",
+   "source": "pthg_offstreet",
+   "lat": 22.6583614,
+   "lon": 120.5593863,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "六堆客家文化園區第二遊客停車場",
+   "address": "內埔鄉建興路（六堆客家文化園區後門）",
+   "car_total": 266,
+   "pay_info": "大型車60元/次，小型車50元/次，機車、腳踏車及身障不收費",
+   "source": "pthg_offstreet",
+   "lat": 22.6595692,
+   "lon": 120.5568572,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "萬丹公園地下停車場",
+   "address": "萬丹鄉萬丹路一段451號",
+   "car_total": 154,
+   "pay_info": "小型車20元/次，隔夜加收50元",
+   "source": "pthg_offstreet",
+   "lat": 22.5938079,
+   "lon": 120.4877494,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "東港漁港立體停車場",
+   "address": "東港鎮新生三路173號",
+   "car_total": 147,
+   "pay_info": "汽車20元/時（自第2小時起，每30分鐘加收10元，當日最高收費250元），月租3600元",
+   "source": "pthg_offstreet",
+   "lat": 22.4677964,
+   "lon": 120.4435539,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "東港中正新基停車場",
+   "address": "屏東縣東港鎮新基街85巷（神農宮旁）",
+   "car_total": 23,
+   "pay_info": "汽車平日15元/30分鐘，當日最高90元；假日15元/30分鐘，最高120元；月租3000元",
+   "source": "pthg_offstreet",
+   "lat": 22.468705,
+   "lon": 120.4519526,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "潮州車站北側汽車停車場",
+   "address": "屏東縣潮州火車站旁",
+   "car_total": 103,
+   "pay_info": "小型車每半小時15元，每日連續停放上限300元；小型車每月收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.550206,
+   "lon": 120.535892,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "租隊友屏林停車場",
+   "address": "屏東縣林邊火車站旁",
+   "car_total": 23,
+   "pay_info": "小型車每次50元，機車每次10元，隔日另計",
+   "source": "pthg_offstreet",
+   "lat": 22.4313389,
+   "lon": 120.5152905,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東縣政府立體停車場",
+   "address": "屏東市自由路527號旁",
+   "car_total": 206,
+   "pay_info": "1.10元/每30分鐘，未滿30分鐘以30分鐘計算，逾30分鐘未滿1小時者以1小時計算                                                                            2.縣府員工800元/月，民眾1600元/月，單月最高3200元為上限",
+   "source": "pthg_offstreet",
+   "lat": 22.6827662,
+   "lon": 120.4881435,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "中華路立體停車場",
+   "address": "屏東市中華路91號",
+   "car_total": 286,
+   "pay_info": "汽車每半小時10元，月租2200元；機車30元/次，月租500元",
+   "source": "pthg_offstreet",
+   "lat": 22.6736476,
+   "lon": 120.4902219,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "屏東縣衛生局地下室停車場",
+   "address": "屏東市自由路272號",
+   "car_total": 183,
+   "pay_info": "小型車半小時10元，當日最高120元，月票每月以3600元為上限。",
+   "source": "pthg_offstreet",
+   "lat": 22.6751379,
+   "lon": 120.4963767,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "屏東縣農會停車場（瑞民停車場）",
+   "address": "屏東市瑞民路6號",
+   "car_total": 203,
+   "pay_info": "每3小時為一單位，每單位30元，當日最高240元，月租2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.6631131,
+   "lon": 120.5076018,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "太平洋百貨屏東店地下停車場",
+   "address": "屏東市中正路72號",
+   "car_total": 308,
+   "pay_info": "30元/時",
+   "source": "pthg_offstreet",
+   "lat": 22.6740801,
+   "lon": 120.4900331,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "環球購物中心停車場",
+   "address": "屏東市興樂里仁愛路90號",
+   "car_total": 192,
+   "pay_info": "小型車平日40元/時，機車平假日30元/次",
+   "source": "pthg_offstreet",
+   "lat": 22.6729913,
+   "lon": 120.4936323,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東西側機車停車場",
+   "address": "屏東市重慶路1號（對面）",
+   "car_total": null,
+   "pay_info": "機車每次收費40元，隔日另計；月租每月收費500元；身心障礙者5折優惠。",
+   "source": "pthg_offstreet",
+   "lat": 22.6699871,
+   "lon": 120.4845808,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "國民運動中心停車場",
+   "address": "屏東市豐榮里勝利東路48號",
+   "car_total": 49,
+   "pay_info": "小客車10元/時，會員2小時免費，身障者1小時免費，身障機車免費",
+   "source": "pthg_offstreet",
+   "lat": 22.6772284,
+   "lon": 120.4986932,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "屏東自由路停車場",
+   "address": "屏東市自由路231號旁",
+   "car_total": 35,
+   "pay_info": "汽車每半小時15元，月租2500元",
+   "source": "pthg_offstreet",
+   "lat": 22.6714169,
+   "lon": 120.4950705,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "佑晨停車場",
+   "address": "屏東市中華路451號旁",
+   "car_total": 35,
+   "pay_info": "平日30元/時，當日最高180元；假日30元/時，當日最高250元",
+   "source": "pthg_offstreet",
+   "lat": 22.6852327,
+   "lon": 120.4956188,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東火車站前永發停車場",
+   "address": "屏東火車站站前東側",
+   "car_total": 94,
+   "pay_info": "汽車25元/半小時，月租費2800元；機車50元/次，月租800元",
+   "source": "pthg_offstreet",
+   "lat": 22.6689173,
+   "lon": 120.4860729,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東市香蕉巷停車場",
+   "address": "屏東市建華三街1號對面",
+   "car_total": 76,
+   "pay_info": "汽車15元/半小時，月租2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.6665642,
+   "lon": 120.4842195,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "正大汽車停車場",
+   "address": "屏東市和生路一段509號旁約200公尺處",
+   "car_total": 21,
+   "pay_info": "汽車50元/次，隔日另計",
+   "source": "pthg_offstreet",
+   "lat": 22.6544189,
+   "lon": 120.4977747,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "潮州車站北側機車計次停車場",
+   "address": "屏東縣潮州火車站北側",
+   "car_total": null,
+   "pay_info": "機車40元/次（身障者半價），隔日另計；月租500元",
+   "source": "pthg_offstreet",
+   "lat": 22.550206,
+   "lon": 120.535892,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房屏東廣東路站停車場",
+   "address": "屏東市廣東路1108-10號對面",
+   "car_total": 39,
+   "pay_info": "汽車50元/小時，按時計費；月租4000元",
+   "source": "pthg_offstreet",
+   "lat": 22.6876772,
+   "lon": 120.4832317,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "興豐計時停車場",
+   "address": "屏東市興豐路208號旁",
+   "car_total": 23,
+   "pay_info": "汽車每半小時15元，當日最高200元；月租費2500元",
+   "source": "pthg_offstreet",
+   "lat": 22.6833008,
+   "lon": 120.5083875,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東火車站西側計時停車場",
+   "address": "屏東市火車站後站西側（公勇路上）",
+   "car_total": 207,
+   "pay_info": "汽車每半小時15元，當日最高300元，月租費2500元；機車每次50元（當日），隔日另計，月租費800元",
+   "source": "pthg_offstreet",
+   "lat": 22.6809732,
+   "lon": 120.4844393,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東市永大停車場",
+   "address": "屏東市永大路121號旁",
+   "car_total": 41,
+   "pay_info": "10元/半小時，當日最高100元，隔日另計；月租1800元",
+   "source": "pthg_offstreet",
+   "lat": 22.6603971,
+   "lon": 120.4780876,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "恆春西門計時停車場",
+   "address": "屏東縣恆春鎮復興路112巷9號對面",
+   "car_total": 141,
+   "pay_info": "小型車每半小時20元，當日最高200元，月租2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.0070164,
+   "lon": 120.741284,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竑穗家樂福新屏站",
+   "address": "屏東市台糖街3號",
+   "car_total": 129,
+   "pay_info": "20元/半小時，月租2500元",
+   "source": "pthg_offstreet",
+   "lat": 22.6634631,
+   "lon": 120.4888673,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "屏東市成功計時停車場",
+   "address": "屏東市成功路95號旁空地",
+   "car_total": 46,
+   "pay_info": "每半小時15元，當日最高200元、月租2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.6735212,
+   "lon": 120.4818005,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "台灣聯通墾丁停車場",
+   "address": "屏東縣恆春鎮大灣路266號旁空地",
+   "car_total": 26,
+   "pay_info": "小型車每半小時30元，未滿30分鐘以30分鐘計，30分鐘以上未滿1小時，以1小時計，24小時最高收費300元。",
+   "source": "pthg_offstreet",
+   "lat": 21.9452628,
+   "lon": 120.7963891,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "墾丁國家森林遊樂區停車場",
+   "address": "屏東縣恆春鎮社興路與公園路交叉口處",
+   "car_total": 166,
+   "pay_info": "大客車80元/次，小客車50元/次，機車20元/次（皆自動收費，隔日另計）",
+   "source": "pthg_offstreet",
+   "lat": 21.9575234,
+   "lon": 120.8124438,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "政道國際有限公司屏東夜市復興停車場",
+   "address": "屏東縣屏東市復興路49號",
+   "car_total": 185,
+   "pay_info": "汽車，平日每次新台幣25元，假日每四小時新台幣25元，當日最高收費100元，隔日另計，月租1200元；機車，平日每次15元，假日每次20元，隔日另計，月租350元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6682288,
+   "lon": 120.4894723,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "國雲科技股份有限公司潮州停車場",
+   "address": "屏東縣潮州鎮延平路39號前",
+   "car_total": 70,
+   "pay_info": "汽車20元/hr，當日最高200元，隔日另計，月租5400元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5526629,
+   "lon": 120.5400304,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "成功道停車場",
+   "address": "屏東縣東港鎮成功路與新興二街口東北側空地",
+   "car_total": 48,
+   "pay_info": "汽車20元/hr，當日最高300元，不逾30分鐘，以半小時計算，隔日另計，月租3000元。自動收費",
+   "source": "pthg_offstreet",
+   "lat": 37.1255146,
+   "lon": 140.9032095,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "小灣臨時停車場",
+   "address": "946屏東縣恆春鎮墾丁路21之2號旁",
+   "car_total": 174,
+   "pay_info": "1.周一至周五（17時以前）：24時至17時，汽車20元/時；17時至24時：汽車40元/時。\\n2.週五（17時以後）至周日、國定假日及連續假日：24時至17時，30元/hr；17時至24時，50元/時。\\n3.停車未滿1小時者，以1小時計算；當日最高480元，午夜24時後，重新計算。\\n4.身心障礙者，半價優惠。",
+   "source": "pthg_offstreet",
+   "lat": 21.9418843,
+   "lon": 120.8060623,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "屏醫停車場",
+   "address": "屏東市公園路1號",
+   "car_total": 70,
+   "pay_info": "1.小型車：每小時新台幣30元，停車時數逾15分鐘未滿一小時，以一小時計算，月租新台幣4000元為上限。\\n2.機車及腳踏車：每小時10元，當日最高30元，月租新台幣1000元為上限。  ",
+   "source": "pthg_offstreet",
+   "lat": 22.6740126,
+   "lon": 120.4912791,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "杉霖崇朝一路停車場",
+   "address": "屏東市勝興段731地號（直走崇朝路後萊爾富左轉約200公尺處）",
+   "car_total": 58,
+   "pay_info": "小型車每半小時30元，每日連續停放上限300元，如不逾半小時，以半小時計算；小型車每月收費3500",
+   "source": "pthg_offstreet",
+   "lat": 22.687576,
+   "lon": 120.4764614,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "哈囉自由停車場",
+   "address": "屏東縣政府旁停車場",
+   "car_total": 49,
+   "pay_info": "小型車每半小時20元",
+   "source": "pthg_offstreet",
+   "lat": 22.6829699,
+   "lon": 120.4879137,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竑穗東港成功停車場",
+   "address": "屏東縣東港鎮光復路及成功路交叉口處停車場",
+   "car_total": 33,
+   "pay_info": "小型車每半小時15元，當日連續停放上限200元；小型車每月收費2000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.4686826,
+   "lon": 120.4549698,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竑穗東港新學停車場",
+   "address": "屏東縣東港鎮東港國小旁停車場",
+   "car_total": 52,
+   "pay_info": "小型車每半小時收費15元，每日連續停放上限200元。",
+   "source": "pthg_offstreet",
+   "lat": 22.4610393,
+   "lon": 120.4934096,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹田車站停車場",
+   "address": "屏東縣竹田火車站橋下",
+   "car_total": 35,
+   "pay_info": "小型車每小時收費30元，停車時數逾十五分鐘未滿三十分鐘者，以三十分鐘計算；停車時數逾一小時者，其超過之不滿一小時部分，如不逾三十分鐘者，以半小時計算；如逾三十分鐘者，仍以一小時計算收費。",
+   "source": "pthg_offstreet",
+   "lat": 22.586608,
+   "lon": 120.53972,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竑穗林森郵局停車場",
+   "address": "屏東市林森郵局後方停車場",
+   "car_total": 30,
+   "pay_info": "小型車每半小時15元，當日最高停放上限200元；小型車月租收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6710655,
+   "lon": 120.4892658,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "朝泉停車場",
+   "address": "屏東縣潮州鎮金陵街35號（老模羊家莊）對面",
+   "car_total": 21,
+   "pay_info": "小型車每半小時25元，每日連續停放上限300元，隔日另計。",
+   "source": "pthg_offstreet",
+   "lat": 22.550624,
+   "lon": 120.5394379,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "邱錦宗停車場",
+   "address": "屏東縣屏東市自由路598號（安和醫院）旁停車場",
+   "car_total": 17,
+   "pay_info": "小型車每次收費50元，停車逾6小時加計一次費用。",
+   "source": "pthg_offstreet",
+   "lat": 22.6834125,
+   "lon": 120.4836256,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "世界健身停車場",
+   "address": "屏東縣潮州鎮永坤路107號旁停車場",
+   "car_total": 60,
+   "pay_info": "小型車每小時收費100元，機車每小時收費50元。停車時數未滿一小時者，以一小時計算收費。停車時數逾一小時以上，其超過之不滿一小時部分，如不逾三十分鐘者，以半小時計算；如逾三十分鐘者，仍以一小時計算收費。",
+   "source": "pthg_offstreet",
+   "lat": 22.553144,
+   "lon": 120.5421424,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "德米春停車場",
+   "address": "屏東縣竹田鄉豐振路2-8號前",
+   "car_total": 55,
+   "pay_info": "平日:小型車每小時20元，當日最高上限為50元。\\n假日:小型車每小時30元，當日最高上限為100元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5872835,
+   "lon": 120.54063,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "南灣停車場",
+   "address": "屏東縣恆春鎮南灣路130號旁停車場",
+   "car_total": 25,
+   "pay_info": "小型車每半小時50元，當日連續停放上限300元；小型車月租收費3500元。",
+   "source": "pthg_offstreet",
+   "lat": 21.9600611,
+   "lon": 120.7651144,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大樂自由停車場",
+   "address": "屏東市迪卡儂二樓",
+   "car_total": 47,
+   "pay_info": "小型車每半小時30元，當日連續停放上限300元，隔日另計；小型車月租收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6710655,
+   "lon": 120.4892658,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "瑞宏停車場",
+   "address": "屏東市國仁醫院急診室對面",
+   "car_total": 46,
+   "pay_info": "小型車每次收費50元（每12小時為一次），當日收費上限為100元。",
+   "source": "pthg_offstreet",
+   "lat": 22.658315,
+   "lon": 120.514549,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "北興中正停車場",
+   "address": "屏東市環保局新棟對面",
+   "car_total": 124,
+   "pay_info": "小型車每半小時30元，當日連續停放上限300元，如不逾半小時，以半小時計算；小型車每月收費3500元",
+   "source": "pthg_offstreet",
+   "lat": 22.6710655,
+   "lon": 120.4892658,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "廣泰停車場",
+   "address": "屏東市廣東路991-1號旁停車場",
+   "car_total": 27,
+   "pay_info": "小型車每半小時25元，當日連續停放上限300元；小型車月租每月收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6874729,
+   "lon": 120.4850044,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "自立停車場",
+   "address": "屏東市自立路120號旁停車場",
+   "car_total": 19,
+   "pay_info": "小型車每月收費2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.6659603,
+   "lon": 120.4894085,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "朝泉二停車場",
+   "address": "屏東縣潮州鎮金陵街35號（老模羊家莊）斜對面",
+   "car_total": 6,
+   "pay_info": "小型車每月收費4000元",
+   "source": "pthg_offstreet",
+   "lat": 22.550624,
+   "lon": 120.5394379,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "水門停車場",
+   "address": "屏東縣水門轉運站內",
+   "car_total": 79,
+   "pay_info": "大型車每次收費60元、小型車每次收費30元、機車每次收費10元，隔日另計；大型車每月月租7200元、小型車每月月租3600元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5519759,
+   "lon": 120.5487597,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東中山站前停車場",
+   "address": "屏東市中山路7號旁停車場",
+   "car_total": null,
+   "pay_info": "機車每次收費50元，隔日另計；月租每月收費800元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6700282,
+   "lon": 120.4859931,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "公園忠孝停車場",
+   "address": "屏東市忠孝路圓環旁",
+   "car_total": 71,
+   "pay_info": "小型車每半小時30元，每日連續停放上限300元，如不逾半小時，以半小時計算；小型車每月收費3500元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6889726,
+   "lon": 120.4890061,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "船帆石停車場",
+   "address": "屏東縣恆春鎮船頂路及船帆路交叉口處旁停車場",
+   "car_total": 56,
+   "pay_info": "小型車每半小時25元；身心障礙者停車優惠3小時免費，超過3小時半價。",
+   "source": "pthg_offstreet",
+   "lat": 21.9395594,
+   "lon": 120.8230444,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "勝利星村停車場",
+   "address": "屏東市勝利星村旁停車場",
+   "car_total": 113,
+   "pay_info": "1.平日：停車每30分鐘15元，當日停放最高上限30元。\\n2.假日：停車第一小時20元，未滿一小時者以一小時計算。停車時數逾一小時以上，自第二小時起，以半小時計算之；當日停放最高上限160元。\\n3.身心障礙者5折優惠（當日以1次為限）。 ",
+   "source": "pthg_offstreet",
+   "lat": 22.6786031,
+   "lon": 120.484498,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "自由路路外停車場",
+   "address": "屏東市自由路玉皇宮前停車場",
+   "car_total": 68,
+   "pay_info": "大型車每次收費60元；小型車每次收費30元。",
+   "source": "pthg_offstreet",
+   "lat": 22.666861,
+   "lon": 120.4922179,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "和平路路外停車場",
+   "address": "屏東市阿信海產店旁停車場",
+   "car_total": 98,
+   "pay_info": "小型車每次收費30元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6798766,
+   "lon": 120.5084494,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新生停車場",
+   "address": "屏東縣潮州鎮新生路與金凌街交叉口處",
+   "car_total": 19,
+   "pay_info": "小型車平日每半小時收費15元，當日收費上限150元；假日及連續假日每半小時收費25元，當日收費上限200元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5489625,
+   "lon": 120.5384503,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "潮州朝昇路停車場",
+   "address": "屏東縣潮州鎮朝昇路257號旁空地",
+   "car_total": 64,
+   "pay_info": "小型車每半小時10元，當日連續停放上限200元；小型車月租每月收費2500元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5561654,
+   "lon": 120.5411608,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "胖嘟嘟停車場",
+   "address": "屏東縣恆春鎮中正路258巷31弄及復興路112巷交叉口處",
+   "car_total": 10,
+   "pay_info": "小型車月租每月收費1200元",
+   "source": "pthg_offstreet",
+   "lat": 22.0078837,
+   "lon": 120.7440025,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "肥嘟嘟停車場",
+   "address": "屏東縣恆春鎮中正路258巷31弄及復興路112巷交叉口處",
+   "car_total": 16,
+   "pay_info": "小型車月租每月收費1200元",
+   "source": "pthg_offstreet",
+   "lat": 22.0078837,
+   "lon": 120.7440025,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times屏東延平路停車場",
+   "address": "屏東市延平路與光明街口旁停車場",
+   "car_total": 25,
+   "pay_info": "小型車每半小時40元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6678163,
+   "lon": 120.4830174,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "國雲科技股份有限公司第一市場停車場",
+   "address": "潮州第一場公有市場二樓",
+   "car_total": 28,
+   "pay_info": "小型車每小時收費20元，當日連續停放上限200元；小型車每月收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5294168,
+   "lon": 120.5624474,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "幸福公園停車場",
+   "address": "屏東市勝利路31號",
+   "car_total": 276,
+   "pay_info": "小型車每小時收費20元；小型車每月收費3600元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6784804,
+   "lon": 120.4914177,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "信義路立體停車場",
+   "address": "屏東市菸廠西巷1-1號",
+   "car_total": 225,
+   "pay_info": "小型車每小時收費20元；小型車每月收費3600元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6623529,
+   "lon": 120.5049156,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "屏菸1936文化基地立體停車場",
+   "address": "屏東市信義路116號",
+   "car_total": 323,
+   "pay_info": "小型車每小時收費20元；小型車每月收費3600元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6755098,
+   "lon": 120.4882821,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "民生路立體停車場",
+   "address": "屏東市仁愛路14-30號",
+   "car_total": 622,
+   "pay_info": "小型車每小時收費20元，離場再停另計收費，停車跨日則累積收費；小型車每用收費2000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6679988,
+   "lon": 120.4912902,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "皓威停車場",
+   "address": "屏東縣潮州鎮壽福路92號對面停車場",
+   "car_total": 16,
+   "pay_info": "小型車每月收費2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.5558334,
+   "lon": 120.5492758,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times東港明智路停車場",
+   "address": "屏東縣東港鎮中正路210號旁",
+   "car_total": 60,
+   "pay_info": "小型車每半小時收費40元",
+   "source": "pthg_offstreet",
+   "lat": 22.4693637,
+   "lon": 120.4517567,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times屏東大武路停車場",
+   "address": "屏東縣屏東市大武路403巷11號旁",
+   "car_total": 32,
+   "pay_info": "小型車每半小時收費40元",
+   "source": "pthg_offstreet",
+   "lat": 22.6643978,
+   "lon": 120.4723198,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times屏東柳州街停車場",
+   "address": "屏東縣屏東市柳州街73-1號旁",
+   "car_total": 58,
+   "pay_info": "小型車每半小時收費40元",
+   "source": "pthg_offstreet",
+   "lat": 22.6723343,
+   "lon": 120.4806145,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times藏壽司屏東中山勝利路店停車場",
+   "address": "屏東縣屏東市勝利路130號",
+   "car_total": 19,
+   "pay_info": "小型車每半小時收費20元",
+   "source": "pthg_offstreet",
+   "lat": 22.6796157,
+   "lon": 120.4844037,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "機場北路路外停車場",
+   "address": "屏東市機場北路及崇勝一街交叉口處",
+   "car_total": 72,
+   "pay_info": "小型車每小時10元，停車未滿一小時者以一小時計算，當日最高上限30元；月租每月收費3200元。\\n身心障礙者停車半價。",
+   "source": "pthg_offstreet",
+   "lat": 22.6879619,
+   "lon": 120.4732431,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "慶發停車場",
+   "address": "屏東縣東港鎮新生二路16號對面停車場",
+   "car_total": 51,
+   "pay_info": "小型車每月月租收費2000元",
+   "source": "pthg_offstreet",
+   "lat": 22.4669257,
+   "lon": 120.446226,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東市青島停車場",
+   "address": "屏東市青島街47號旁停車場",
+   "car_total": 26,
+   "pay_info": "小型車每半小時收費15元，當日連續停放上限200元；小型車月租收費2500元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6784584,
+   "lon": 120.4886169,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times全聯屏東里港店停車場",
+   "address": "屏東縣里港鄉鐵店路21-30號、全聯福利中心里港門市",
+   "car_total": 4,
+   "pay_info": "小型車每半小時收費20元",
+   "source": "pthg_offstreet",
+   "lat": 22.7777064,
+   "lon": 120.4979282,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "東港新生站停車場",
+   "address": "屏東縣東港鎮朝安里新生二路16號斜對面",
+   "car_total": 38,
+   "pay_info": "小型車每半小時收費40元",
+   "source": "pthg_offstreet",
+   "lat": 22.4669257,
+   "lon": 120.446226,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "建國正氣停車場",
+   "address": "屏東市建國路113-2號（萊爾富便利商店屏東建欣店）後方停車場",
+   "car_total": 58,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限200元，如不逾半小時，以半小時計算；小型車月租收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6649328,
+   "lon": 120.4813561,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "太原一路停車場",
+   "address": "屏東市太原一路與公正二街口旁",
+   "car_total": 51,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限200元，如不逾半小時，以半小時計算；小型車月租收費3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6855367,
+   "lon": 120.4863813,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "東港新生停車場",
+   "address": "屏東縣東港鎮新生三路34號旁",
+   "car_total": 41,
+   "pay_info": "小型車週一至週四每小時20元、週五至週日每小時收費30元，每日連續停放上限180元，如不逾一小時，以一小時計算；小型車每月收費2000元（週一至週五，週六至週日不列入月租範圍）。 ",
+   "source": "pthg_offstreet",
+   "lat": 22.4673088,
+   "lon": 120.4463681,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "城市車旅全聯內埔勝光停車場",
+   "address": "屏東縣內埔鄉勝光路60號對面",
+   "car_total": 22,
+   "pay_info": "小型車每小時40元，當日連續停放上限300元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6139166,
+   "lon": 120.5715899,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "太原自由停車場",
+   "address": "屏東市戶政事務所後方",
+   "car_total": 32,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限250元，如不逾半小時，以半小時計算；小型車每月月租3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6825434,
+   "lon": 120.4870756,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "潮州新生停車場",
+   "address": "屏東市潮州鎮新生路74號旁",
+   "car_total": 34,
+   "pay_info": "小型車每半小時收費10元，當日連續停放上限200元；小型車每月月租3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.5498055,
+   "lon": 120.5386874,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "廣東中山停車場",
+   "address": "屏東市廣東路1019號旁",
+   "car_total": 60,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限250元，如不逾半小時，以半小時計算；小型車每月月租3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.687355,
+   "lon": 120.4830537,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大中山停車場",
+   "address": "屏東市中山路132號旁",
+   "car_total": 39,
+   "pay_info": "小型車每小時收費20元，當日連續停放上限200元，如不逾1小時，以1小時計算。",
+   "source": "pthg_offstreet",
+   "lat": 22.6819764,
+   "lon": 120.4847476,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "民富廣東停車場",
+   "address": "屏東市民富街與民富街30巷街口旁",
+   "car_total": 31,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限300元，如不逾半小時，以半小時計算；小型車每月月租3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.685636,
+   "lon": 120.4979056,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "城市車旅屏東民權停車場",
+   "address": "屏東市民權路70號旁",
+   "car_total": 24,
+   "pay_info": "小型車每半小時收費40元，當日連續停放上限300元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6731759,
+   "lon": 120.4922978,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "民富廣東第二停車場",
+   "address": "屏東市民富街30巷36號對面",
+   "car_total": 105,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限300元，如不逾半小時，以半小時計算；小型車每月月租3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.672814,
+   "lon": 120.4957408,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "楊桃停車場",
+   "address": "屏東市光復路70號旁",
+   "car_total": null,
+   "pay_info": "機車平日每次收費20元；假日每次收費30元。（隔日另計）",
+   "source": "pthg_offstreet",
+   "lat": 22.6697637,
+   "lon": 120.4869513,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "潮州車站停車場",
+   "address": "屏東縣潮州鎮中山八巷與六合路口",
+   "car_total": 63,
+   "pay_info": "小型車每小時收費20元。（如不逾1小時，以1小時計算）",
+   "source": "pthg_offstreet",
+   "lat": 22.5513905,
+   "lon": 120.5367443,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "城市車旅鹽埔郵局站停車場",
+   "address": "屏東縣鹽埔鄉新二村彭厝路39號（鹽埔郵局）後方",
+   "car_total": 25,
+   "pay_info": "小型車每半小時收費30元，當日連續停放上限200元；小型車每月月租1800元。",
+   "source": "pthg_offstreet",
+   "lat": 22.7421702,
+   "lon": 120.5560634,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏醫第一停車場",
+   "address": "屏東市自由路270號",
+   "car_total": null,
+   "pay_info": "機車每小時收費10元，當日連續停放上限240元；機車每月月租3000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6734789,
+   "lon": 120.4957018,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "城市車旅屏東大連停車場",
+   "address": "屏基醫療財團法人屏東基督教醫院對面",
+   "car_total": 152,
+   "pay_info": "小型車每小時收費50元，當日連續停放上限500元；小型車每月月租2000元。",
+   "source": "pthg_offstreet",
+   "lat": 22.682129,
+   "lon": 120.502622,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "屏東驛站東側法定停車場",
+   "address": "屏東市公勇路29號對面",
+   "car_total": 64,
+   "pay_info": "身心障礙者五折優惠；小型車每半小時收費30元，當日連續停放上限500元，停車時數未滿1小時者，以1小時計算，時數逾1小時以上，其超過未滿1小時部分，如不逾30分鐘者，以半小時計算，如逾30分鐘者仍以1小時計算；機車每次收費50元，隔日另計；小型車每月月租4000元；機車每月月租700元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6683619,
+   "lon": 120.4876604,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房屏東東港站停車場",
+   "address": "東港鎮光復路一段299-1號旁",
+   "car_total": 69,
+   "pay_info": "小型車每小時收費40元，停車時數未滿一小時者，以一小時計費；小型車每月月租2500元。",
+   "source": "pthg_offstreet",
+   "lat": 22.4697017,
+   "lon": 120.4590486,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "豐年街停車場",
+   "address": "屏東市豐年街與豐年街131巷口",
+   "car_total": 40,
+   "pay_info": "小型車每月月租1370元。",
+   "source": "pthg_offstreet",
+   "lat": 22.6786817,
+   "lon": 120.5066486,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "市政中心停車場",
+   "address": "嘉義縣朴子市市政中心停車場",
+   "car_total": 62,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4464152,
+   "lon": 120.2570421,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "郡役所停車場",
+   "address": "嘉義縣朴子市郡役所停車場",
+   "car_total": 22,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4464152,
+   "lon": 120.2570421,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "老人會停車場(廣停八停車場)",
+   "address": "嘉義縣朴子市老人會停車場(廣停八停車場)",
+   "car_total": 70,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4464152,
+   "lon": 120.2570421,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "第一公有零售市場地下停車場",
+   "address": "嘉義縣朴子市第一公有零售市場地下停車場",
+   "car_total": 110,
+   "pay_info": "10元/小時，100元/日",
+   "source": "cyhg",
+   "lat": 23.4464152,
+   "lon": 120.2570421,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "朴子第五停車場(廣停五)",
+   "address": "嘉義縣朴子市朴子第五停車場(廣停五)",
+   "car_total": 27,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4629039,
+   "lon": 120.2426185,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "四維路停車場(廣停六停車場)",
+   "address": "嘉義縣朴子市四維路停車場(廣停六停車場)",
+   "car_total": 10,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.462888,
+   "lon": 120.2501612,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "山通路停車場(廣停四停車場)",
+   "address": "嘉義縣朴子市山通路停車場(廣停四停車場)",
+   "car_total": 18,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4665327,
+   "lon": 120.2520249,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "第二公有停車場(廣停二停車場)",
+   "address": "嘉義縣朴子市第二公有停車場(廣停二停車場)",
+   "car_total": 35,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4589288,
+   "lon": 120.2455306,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "體育館停車場",
+   "address": "嘉義縣朴子市體育館停車場",
+   "car_total": 47,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4464152,
+   "lon": 120.2570421,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "長庚紀念醫院嘉義分院停車場",
+   "address": "嘉義縣朴子市長庚紀念醫院嘉義分院停車場",
+   "car_total": 2187,
+   "pay_info": "20元/小時、第2小時起每小時10元，180元/24小時",
+   "source": "cyhg",
+   "lat": 23.4625513,
+   "lon": 120.286094,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "朴子醫院",
+   "address": "嘉義縣朴子市朴子醫院",
+   "car_total": 69,
+   "pay_info": "20元/日",
+   "source": "cyhg",
+   "lat": 23.464452,
+   "lon": 120.234639,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "嘟嘟房嘉義朴子停車場",
+   "address": "嘉義縣朴子市嘟嘟房嘉義朴子停車場",
+   "car_total": 37,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.4654044,
+   "lon": 120.2468479,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房嘉義大同",
+   "address": "嘉義縣朴子市嘟嘟房嘉義大同",
+   "car_total": 13,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.4616513,
+   "lon": 120.2370846,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房朴子光復停車場",
+   "address": "嘉義縣朴子市嘟嘟房朴子光復停車場",
+   "car_total": 69,
+   "pay_info": "",
+   "source": "cyhg",
+   "lat": 23.4629039,
+   "lon": 120.2426185,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "朴子五路/祥和二路西段停車場",
+   "address": "嘉義縣縣治所在區朴子五路/祥和二路西段停車場",
+   "car_total": 49,
+   "pay_info": "20元/小時、後續10元/半小時",
+   "source": "cyhg",
+   "lat": 23.4582306,
+   "lon": 120.2871978,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "祥和一路西段/朴子二路停車場",
+   "address": "嘉義縣縣治所在區祥和一路西段/朴子二路停車場",
+   "car_total": 90,
+   "pay_info": "20元/小時、後續10元/半小時",
+   "source": "cyhg",
+   "lat": 23.4588123,
+   "lon": 120.2955653,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "府前地下停車場",
+   "address": "嘉義縣縣治所在區府前地下停車場",
+   "car_total": 695,
+   "pay_info": "小客車10元/小時、機車10元/小時，600元/月",
+   "source": "cyhg",
+   "lat": 23.4518428,
+   "lon": 120.2554615,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "環保局前停車場",
+   "address": "嘉義縣縣治所在區環保局前停車場",
+   "car_total": 34,
+   "pay_info": "20元/小時、後續10元/半小時",
+   "source": "cyhg",
+   "lat": 23.4518428,
+   "lon": 120.2554615,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "衛生局前停車場",
+   "address": "嘉義縣縣治所在區衛生局前停車場",
+   "car_total": 18,
+   "pay_info": "20元/小時、後續10元/半小時",
+   "source": "cyhg",
+   "lat": 23.4518428,
+   "lon": 120.2554615,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "游泳池旁停車場(嘉義縣立棒球場停車場）",
+   "address": "嘉義縣縣治所在區游泳池旁停車場(嘉義縣立棒球場停車場）",
+   "car_total": 31,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4561346,
+   "lon": 120.2912895,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "七主宮旁停車場(嘉義縣立棒球場停車場）",
+   "address": "嘉義縣縣治所在區七主宮旁停車場(嘉義縣立棒球場停車場）",
+   "car_total": 93,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4561346,
+   "lon": 120.2912895,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "兒童遊戲區(嘉義縣立棒球場停車場）",
+   "address": "嘉義縣縣治所在區兒童遊戲區(嘉義縣立棒球場停車場）",
+   "car_total": 41,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4561346,
+   "lon": 120.2912895,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "創新地下停車場",
+   "address": "嘉義縣縣治所在區創新地下停車場",
+   "car_total": 276,
+   "pay_info": "小客車10元/小時，600元/月",
+   "source": "cyhg",
+   "lat": 23.4518428,
+   "lon": 120.2554615,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "城市車旅嘉義高鐵一站停車場",
+   "address": "嘉義縣太保市城市車旅嘉義高鐵一站停車場",
+   "car_total": 121,
+   "pay_info": "20元/小時，平日50元/日，假日60元/日",
+   "source": "cyhg",
+   "lat": 23.4626718,
+   "lon": 120.323938,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房高鐵嘉義站",
+   "address": "嘉義縣太保市嘟嘟房高鐵嘉義站",
+   "car_total": 750,
+   "pay_info": "小客車40元/小時、機車10元/小時",
+   "source": "cyhg",
+   "lat": 23.45925,
+   "lon": 120.32282,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "快捷停車場",
+   "address": "嘉義縣太保市快捷停車場",
+   "car_total": 159,
+   "pay_info": "20元/小時，2000元/月",
+   "source": "cyhg",
+   "lat": 23.4574187,
+   "lon": 120.3254746,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "好庭車停車場",
+   "address": "嘉義縣太保市好庭車停車場",
+   "car_total": 290,
+   "pay_info": "20元/小時，60元/日",
+   "source": "cyhg",
+   "lat": 23.458407,
+   "lon": 120.326016,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "台糖太保停車場",
+   "address": "嘉義縣太保市台糖太保停車場",
+   "car_total": 347,
+   "pay_info": "20元/小時，小客車80元/日、機車20元/日",
+   "source": "cyhg",
+   "lat": 23.4583685,
+   "lon": 120.3241457,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "城市車旅嘉義高鐵二站停車場",
+   "address": "嘉義縣太保市城市車旅嘉義高鐵二站停車場",
+   "car_total": 129,
+   "pay_info": "小客車20元/小時，平日70元/日、假日80元/日",
+   "source": "cyhg",
+   "lat": 23.4569162,
+   "lon": 120.3237316,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "五都停車場高鐵嘉義站",
+   "address": "嘉義縣太保市五都停車場高鐵嘉義站",
+   "car_total": 187,
+   "pay_info": "20元/小時，平日50元/日，假日60元/日",
+   "source": "cyhg",
+   "lat": 23.4626518,
+   "lon": 120.3234683,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "五都停車場高鐵嘉義二站",
+   "address": "嘉義縣太保市五都停車場高鐵嘉義二站",
+   "car_total": 762,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.4615466,
+   "lon": 120.3223093,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "五都停車場高鐵嘉義三站",
+   "address": "嘉義縣太保市五都停車場高鐵嘉義三站",
+   "car_total": 0,
+   "pay_info": "100元/小時，400元/日",
+   "source": "cyhg",
+   "lat": 23.4626518,
+   "lon": 120.3234683,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "五都停車場高鐵嘉義五站",
+   "address": "嘉義縣太保市五都停車場高鐵嘉義五站",
+   "car_total": 133,
+   "pay_info": "20元/小時，100元/日",
+   "source": "cyhg",
+   "lat": 23.4626518,
+   "lon": 120.3234683,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "電鰻充電停車場",
+   "address": "嘉義縣太保市電鰻充電停車場",
+   "car_total": 23,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.4980543,
+   "lon": 120.3814864,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "廉增停車場故宮南院",
+   "address": "嘉義縣太保市廉增停車場故宮南院",
+   "car_total": 545,
+   "pay_info": "小客車50元/日、機車10元/日",
+   "source": "cyhg",
+   "lat": 23.4731294,
+   "lon": 120.2927165,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "快樂停車場",
+   "address": "嘉義縣大林鎮快樂停車場",
+   "car_total": 13,
+   "pay_info": "30元/小時",
+   "source": "cyhg",
+   "lat": 23.6040709,
+   "lon": 120.4542004,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "站前機車停車場",
+   "address": "嘉義縣大林鎮站前機車停車場",
+   "car_total": 0,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.571869,
+   "lon": 120.4917428,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大林後火車站停車場",
+   "address": "嘉義縣大林鎮大林後火車站停車場",
+   "car_total": 56,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.600671,
+   "lon": 120.456161,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "明和社區休閒公園",
+   "address": "嘉義縣大林鎮明和社區休閒公園",
+   "car_total": 0,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.6071617,
+   "lon": 120.4481273,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "佛教大林慈濟醫院停車場",
+   "address": "嘉義縣大林鎮佛教大林慈濟醫院停車場",
+   "car_total": 505,
+   "pay_info": "小客車：前3小時30元，後續每小時10元，24小時最高120元",
+   "source": "cyhg",
+   "lat": 23.5959936,
+   "lon": 120.4572988,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "民雄火車站停車場",
+   "address": "嘉義縣民雄鄉民雄火車站停車場",
+   "car_total": 50,
+   "pay_info": "平日100元/次，假日150元/次",
+   "source": "cyhg",
+   "lat": 23.5547233,
+   "lon": 120.4319505,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "中正大學部機車停車場",
+   "address": "嘉義縣民雄鄉中正大學部機車停車場",
+   "car_total": 0,
+   "pay_info": "300元/每學年(僅供教職學生)",
+   "source": "cyhg",
+   "lat": 23.558577,
+   "lon": 120.4718534,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "強展金世界停車場",
+   "address": "嘉義縣民雄鄉強展金世界停車場",
+   "car_total": 95,
+   "pay_info": "20元/小時，2000元/月",
+   "source": "cyhg",
+   "lat": 23.5171694,
+   "lon": 120.4397041,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "強展嘉大民雄校區停車場",
+   "address": "嘉義縣民雄鄉強展嘉大民雄校區停車場",
+   "car_total": 69,
+   "pay_info": "20元/小時，2000元/月",
+   "source": "cyhg",
+   "lat": 23.542285,
+   "lon": 120.423614,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘉加停車場(兆赫電子)",
+   "address": "嘉義縣民雄鄉嘉加停車場(兆赫電子)",
+   "car_total": 49,
+   "pay_info": "150元/日",
+   "source": "cyhg",
+   "lat": 23.5310558,
+   "lon": 120.452905,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "安安停車場",
+   "address": "嘉義縣民雄鄉安安停車場",
+   "car_total": 66,
+   "pay_info": "無臨時收費，6000元/半年、12000元/年",
+   "source": "cyhg",
+   "lat": 23.5577214,
+   "lon": 120.4313583,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "表演藝術中心停車場",
+   "address": "嘉義縣民雄鄉表演藝術中心停車場",
+   "car_total": 281,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5441121,
+   "lon": 120.4320576,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "吳鳳科技大學停車場",
+   "address": "嘉義縣民雄鄉吳鳳科技大學停車場",
+   "car_total": 187,
+   "pay_info": "小客車10元/日、50元/日，(機車僅對內使用)",
+   "source": "cyhg",
+   "lat": 23.5354799,
+   "lon": 120.433934,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "全聯民雄站(竑穗)",
+   "address": "嘉義縣民雄鄉全聯民雄站(竑穗)",
+   "car_total": 27,
+   "pay_info": "小客車20元/半小時",
+   "source": "cyhg",
+   "lat": 23.5587084,
+   "lon": 120.4265032,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "全聯民雄大學停車場",
+   "address": "嘉義縣民雄鄉全聯民雄大學停車場",
+   "car_total": 9,
+   "pay_info": "小客車20元/半小時",
+   "source": "cyhg",
+   "lat": 23.5548408,
+   "lon": 120.4347349,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "三河停車場",
+   "address": "嘉義縣民雄鄉三河停車場",
+   "car_total": 55,
+   "pay_info": "汽車月租2000/月，機車月租1000/月",
+   "source": "cyhg",
+   "lat": 23.5202655,
+   "lon": 120.4403808,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停一立體停車場",
+   "address": "嘉義縣新港鄉停一立體停車場",
+   "car_total": 374,
+   "pay_info": "20元/小時、後續10元/半小時",
+   "source": "cyhg",
+   "lat": 23.5544257,
+   "lon": 120.3484943,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "新港公園停車場(奉天宮大型車停車場)",
+   "address": "嘉義縣新港鄉新港公園停車場(奉天宮大型車停車場)",
+   "car_total": 75,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5527744,
+   "lon": 120.3462308,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房新港奉天宮停車場",
+   "address": "嘉義縣新港鄉嘟嘟房新港奉天宮停車場",
+   "car_total": 25,
+   "pay_info": "平日30元/小時、假日60元/小時，平日90元/日，假日210元/日",
+   "source": "cyhg",
+   "lat": 23.556142,
+   "lon": 120.3530859,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟房新港奉天宮2站停車場",
+   "address": "嘉義縣新港鄉嘟嘟房新港奉天宮2站停車場",
+   "car_total": 56,
+   "pay_info": "平日30元/小時、假日60元/小時，平日90元/日、假日240元/日",
+   "source": "cyhg",
+   "lat": 23.5542742,
+   "lon": 120.3491178,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "衛生所旁停車場",
+   "address": "嘉義縣水上鄉衛生所旁停車場",
+   "car_total": 30,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.428223,
+   "lon": 120.3976655,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "中興路空地停車場(正義路停車場)",
+   "address": "嘉義縣水上鄉中興路空地停車場(正義路停車場)",
+   "car_total": 13,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4301743,
+   "lon": 120.4024842,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "市場空地停車場(市政街、中正路口停車場)",
+   "address": "嘉義縣水上鄉市場空地停車場(市政街、中正路口停車場)",
+   "car_total": 21,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4292549,
+   "lon": 120.3979719,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "水上車站停車場",
+   "address": "嘉義縣水上鄉水上車站停車場",
+   "car_total": 30,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.433976,
+   "lon": 120.399706,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘉義航空站停車場",
+   "address": "嘉義縣水上鄉嘉義航空站停車場",
+   "car_total": 62,
+   "pay_info": "20元/小時，小客車100元/日、機車20元/日",
+   "source": "cyhg",
+   "lat": 23.4545973,
+   "lon": 120.4038876,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "北回太陽館停車場",
+   "address": "嘉義縣水上鄉北回太陽館停車場",
+   "car_total": 60,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.454118,
+   "lon": 120.416229,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "水上地政事務所旁",
+   "address": "嘉義縣水上鄉水上地政事務所旁",
+   "car_total": 17,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4337772,
+   "lon": 120.3959132,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "公有免費停車場(中山路與新中街交叉口)",
+   "address": "嘉義縣布袋鎮公有免費停車場(中山路與新中街交叉口)",
+   "car_total": 100,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.3797428,
+   "lon": 120.1513819,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高跟鞋教堂停車場",
+   "address": "嘉義縣布袋鎮高跟鞋教堂停車場",
+   "car_total": 86,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.3777863,
+   "lon": 120.1487636,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "觀光漁市旁機車停車場",
+   "address": "嘉義縣布袋鎮觀光漁市旁機車停車場",
+   "car_total": 0,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.3793698,
+   "lon": 120.1554637,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "布袋港旅客服務中心停車場",
+   "address": "嘉義縣布袋鎮布袋港旅客服務中心停車場",
+   "car_total": 644,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.379182,
+   "lon": 120.1394902,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "布袋港第二停車場",
+   "address": "嘉義縣布袋鎮布袋港第二停車場",
+   "car_total": 242,
+   "pay_info": "20元/小時，160元/日",
+   "source": "cyhg",
+   "lat": 23.3807444,
+   "lon": 120.1392738,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "布袋港第三停車場",
+   "address": "嘉義縣布袋鎮布袋港第三停車場",
+   "car_total": 416,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.3800045,
+   "lon": 120.1412811,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "台灣公主遊艇停車場",
+   "address": "嘉義縣布袋鎮台灣公主遊艇停車場",
+   "car_total": 149,
+   "pay_info": "20元/小時",
+   "source": "cyhg",
+   "lat": 23.3846635,
+   "lon": 120.1543863,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "張保惠停車場",
+   "address": "嘉義縣布袋鎮張保惠停車場",
+   "car_total": 26,
+   "pay_info": "50元/小時",
+   "source": "cyhg",
+   "lat": 23.3627901,
+   "lon": 120.1704766,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "第一停車場(清潔隊)",
+   "address": "嘉義縣梅山鄉第一停車場(清潔隊)",
+   "car_total": 24,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5410247,
+   "lon": 120.6890055,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "第二停車場-梅山公園停車場",
+   "address": "嘉義縣梅山鄉第二停車場-梅山公園停車場",
+   "car_total": 57,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5787816,
+   "lon": 120.5570154,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "轉運站停車場(舊梅山國中)",
+   "address": "嘉義縣梅山鄉轉運站停車場(舊梅山國中)",
+   "car_total": 17,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5870139,
+   "lon": 120.5604861,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "太平雲梯停車場",
+   "address": "嘉義縣梅山鄉太平雲梯停車場",
+   "car_total": 127,
+   "pay_info": "大客車50元/小時、小客車30元/小時",
+   "source": "cyhg",
+   "lat": 23.5594901,
+   "lon": 120.6013438,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "太平老街停車場",
+   "address": "嘉義縣梅山鄉太平老街停車場",
+   "car_total": 28,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5596555,
+   "lon": 120.602862,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "太平三元宮",
+   "address": "嘉義縣梅山鄉太平三元宮",
+   "car_total": 45,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5617977,
+   "lon": 120.6040617,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "竹崎車站停車場",
+   "address": "嘉義縣竹崎鄉竹崎車站停車場",
+   "car_total": 5,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.525837,
+   "lon": 120.553579,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹崎親水公園停車場",
+   "address": "嘉義縣竹崎鄉竹崎親水公園停車場",
+   "car_total": 80,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5256358,
+   "lon": 120.5519371,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "樟腦寮月香停車場",
+   "address": "嘉義縣竹崎鄉樟腦寮月香停車場",
+   "car_total": 21,
+   "pay_info": "汽車50元/次",
+   "source": "cyhg",
+   "lat": 23.533507,
+   "lon": 120.601786,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "第三停車場",
+   "address": "嘉義縣竹崎鄉(奮起湖)第三停車場",
+   "car_total": 47,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.503081,
+   "lon": 120.6974694,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "第一停車場",
+   "address": "嘉義縣竹崎鄉(奮起湖)第一停車場",
+   "car_total": 24,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5046432,
+   "lon": 120.6977075,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "路邊+第二停車場",
+   "address": "嘉義縣竹崎鄉(奮起湖)路邊+第二停車場",
+   "car_total": 62,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5060495,
+   "lon": 120.6948042,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "大型車停車場",
+   "address": "嘉義縣竹崎鄉(奮起湖)大型車停車場",
+   "car_total": 0,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.5064295,
+   "lon": 120.7005044,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "漁人碼頭停車場",
+   "address": "嘉義縣東石鄉漁人碼頭停車場",
+   "car_total": 439,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4487536,
+   "lon": 120.1352728,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "漁人碼頭身障停車場",
+   "address": "嘉義縣東石鄉漁人碼頭身障停車場",
+   "car_total": 29,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4487536,
+   "lon": 120.1352728,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "魚市場停車場",
+   "address": "嘉義縣東石鄉魚市場停車場",
+   "car_total": 165,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4701923,
+   "lon": 120.1704766,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "魚市場東側停車場",
+   "address": "嘉義縣東石鄉魚市場東側停車場",
+   "car_total": 146,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4701923,
+   "lon": 120.1704766,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘉義縣東石鄉港口宮停車場",
+   "address": "嘉義縣東石鄉嘉義縣東石鄉港口宮停車場",
+   "car_total": 400,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4939514,
+   "lon": 120.1864392,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "情人公園停車場",
+   "address": "嘉義縣大埔鄉情人公園停車場",
+   "car_total": 16,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.3019633,
+   "lon": 120.5893911,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "湖濱公園停車場",
+   "address": "嘉義縣大埔鄉湖濱公園停車場",
+   "car_total": 38,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.2986941,
+   "lon": 120.5869311,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "國小前停車場",
+   "address": "嘉義縣阿里山鄉國小前停車場",
+   "car_total": 15,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4354677,
+   "lon": 120.7809676,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "活動中心停車場",
+   "address": "嘉義縣阿里山鄉活動中心停車場",
+   "car_total": 20,
+   "pay_info": "未收費",
+   "source": "cyhg",
+   "lat": 23.4354677,
+   "lon": 120.7809676,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "中埔鄉農會停車場",
+   "address": "嘉義縣中埔鄉中埔鄉農會停車場",
+   "car_total": 30,
+   "pay_info": "20元/小時，100元/日，1000元/月",
+   "source": "cyhg",
+   "lat": 23.4462753,
+   "lon": 120.4941054,
+   "geo_precision": "exact"
+  },
+  {
+   "name": "湖口鄉中興立體停車場",
+   "address": "湖口鄉興湖段58-74等17筆地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8991833,
+   "lon": 121.0395084,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "華興街立體停車場",
+   "address": "竹北市華興段129、132、133、134、197、236、237、239地號(竹北市竹義里46鄰華興街195號)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8389482,
+   "lon": 121.0015273,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "站後停車場",
+   "address": "竹北市站後段8、9、10、11、14、15、16、20、21、22、23、24、25等13筆地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "東元停車場",
+   "address": "竹北市縣福段224地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "臺灣高速鐵路股份有限公司新竹站停車場",
+   "address": "竹北市世興段3、3-3、3-4地號(竹北市隘口里2鄰高鐵7路6號)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8081568,
+   "lon": 121.0401394,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "CARIN竹榮站停車場",
+   "address": "竹東鎮資源段120地號(竹東鎮中豐路1段81號)",
+   "car_total": null,
+   "pay_info": "計時、計次",
+   "source": "hsinchu",
+   "lat": 24.6970182,
+   "lon": 121.0330156,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "廣四廣場停車場",
+   "address": "竹北市新國段366、368、372地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停四勝利停車場",
+   "address": "竹北市大學段524地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停五成功停車場",
+   "address": "竹北市公園段748地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停七光明停車場",
+   "address": "竹北市翰林段606地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹東鎮三重社區活動中心前公有停車場(中興路)",
+   "address": "竹東鎮四重段826地號",
+   "car_total": null,
+   "pay_info": "月租",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "縣華段停車場",
+   "address": "竹北市縣華段140地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "承恩建設股份有限公司",
+   "address": "竹北市大學段521地號(竹北市十興里11鄰光明6路東一段263號及265號)",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.821154,
+   "lon": 121.0257955,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "好庭車文興停車場",
+   "address": "竹北市隘興段538地號",
+   "car_total": null,
+   "pay_info": "月租",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "好庭車縣政二停車場",
+   "address": "竹北市縣福段115地號(竹北市縣政二路107號)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8279238,
+   "lon": 121.0162451,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "公二暨停五公有停車場",
+   "address": "竹北市翰林段1476地號(竹北市文平路250號)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.830762,
+   "lon": 121.0114725,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹中停1停車場",
+   "address": "竹東鎮竹中路145號(竹中段194地號部分土地)",
+   "car_total": null,
+   "pay_info": "計次、月租",
+   "source": "hsinchu",
+   "lat": 24.7814448,
+   "lon": 121.030576,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北市停15路外停車場",
+   "address": "新竹縣竹北市縣華段561、561-1地號(光明一路上)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8306754,
+   "lon": 121.0136553,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北高鐵停6路外停車場",
+   "address": "竹北市永興段510地號(竹北市文興路二段與嘉興十路路口)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹芎林鄉停1路外停車場",
+   "address": "芎林鄉廣福段204(部分)、上德段307地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.765792,
+   "lon": 121.1080244,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "重光75停車場",
+   "address": "竹東鎮重光段0075-0000地號",
+   "car_total": null,
+   "pay_info": "月租",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "和平街停車場",
+   "address": "新埔鎮福德段15、17、186、187、188地號",
+   "car_total": null,
+   "pay_info": "月租、年費",
+   "source": "hsinchu",
+   "lat": 24.8496061,
+   "lon": 121.0908329,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新社停車場",
+   "address": "竹北市社北段437、438地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市光明六路停車場",
+   "address": "竹北市公園段473地號(竹北市光明六路東一段276號旁)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8201764,
+   "lon": 121.0262697,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "官德男停車場",
+   "address": "竹東鎮重光段0076-0002地號",
+   "car_total": null,
+   "pay_info": "月租",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹縣湖口工業區鳳凰村仁樂路停車場",
+   "address": "湖口鄉建興段鳳凰小段0529地號(湖口鄉鳳凰村仁樂路88號旁)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8716677,
+   "lon": 121.0135301,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市三民路停車場",
+   "address": "竹北市豆子埔段1027、1028地號(竹北市三民路149號旁)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8332811,
+   "lon": 121.0158599,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停八嘉德停車場",
+   "address": "竹北市台科段3部分地號、4地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "斗星停車場",
+   "address": "竹北市府前段1212地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "仁發香榭停車場",
+   "address": "竹北市莊敬段744地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "臻觀社區停車場",
+   "address": "竹北市隘興段628-2地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北天后宮停車場",
+   "address": "竹北市竹仁段898、899、899-2、900、901、902等6筆地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8372255,
+   "lon": 121.0121773,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市文壽街停車場",
+   "address": "竹北市翰林段1440地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市仁義路停車場",
+   "address": "竹北市豆子埔595地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.836395,
+   "lon": 121.017655,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市文采街停車場",
+   "address": "竹北市翰林段1009、1010、1011、1012地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市文信路停車場",
+   "address": "竹北市翰林段1032、1033、1034、1035、1036地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停十六福興停車場",
+   "address": "竹北市台科段203地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "富宇君天下室內地下停車場",
+   "address": "竹北市永興段453地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北三民停車場",
+   "address": "竹北市竹義段429地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8356132,
+   "lon": 121.0062288,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "中興路外停車場",
+   "address": "湖口鄉中興段中興小段518地號(安宅五街)",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8684044,
+   "lon": 121.029366,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "五都停車場高鐵新竹一站",
+   "address": "竹北市世興段33地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹縣游泳館停車場",
+   "address": "公園段1164地號部分土地",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": null,
+   "lon": null
+  },
+  {
+   "name": "三千湖口停車塔",
+   "address": "湖口鄉建興段建興小段205地號(中華路122-7號)",
+   "car_total": null,
+   "pay_info": "月租",
+   "source": "hsinchu",
+   "lat": 24.876174,
+   "lon": 121.0113955,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市文信建國停車場",
+   "address": "竹北市豆子埔982、982-1、989-16、989-17地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.836395,
+   "lon": 121.017655,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北暐順經貿大樓地下停車場",
+   "address": "竹北世興段46、47地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北停九停車場",
+   "address": "竹北市自強段168地號部分土地",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "伯公下停車場",
+   "address": "非都市土地(橫山鄉內灣段610、611、614、617、622、625地號)",
+   "car_total": null,
+   "pay_info": "計次",
+   "source": "hsinchu",
+   "lat": 24.7057594,
+   "lon": 121.1781975,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "關西第一停車場",
+   "address": "關西鎮明德段457、458、454、455、746、744-2、748、749、750-1、747、757、805、767、761、758、421、427、428、430、435、436、441、442、447、448、453等26筆地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": null,
+   "lon": null
+  },
+  {
+   "name": "停二泰和停車場",
+   "address": "竹北市東華段1031地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "廣停一機車停車場",
+   "address": "竹北市站後段19、20地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "小叮噹科學主題樂園停車場",
+   "address": "新豐鄉上坑段225地號(土地所有權-新豐鄉公所)",
+   "car_total": null,
+   "pay_info": "計次",
+   "source": "hsinchu",
+   "lat": 24.9007386,
+   "lon": 120.9852815,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市文愛街停車場",
+   "address": "竹北市翰林836、837-1、837-2、837-3地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "六福主題樂園停車場",
+   "address": "關西鎮拱子溝段120、120-1、49、129-1、118-6、118-7、118-4、118-3、118-2、118-1、50、51-1、119、51-2、48-1、48-2、48-3、48-4、48-5、121等20筆地號",
+   "car_total": null,
+   "pay_info": "計次",
+   "source": "hsinchu",
+   "lat": 24.808257,
+   "lon": 121.18405,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北市勝利三街停車場",
+   "address": "竹北市大學段169、170、171、172地號(竹北市勝利三街9號旁)",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8236363,
+   "lon": 121.0259939,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "富宇天空樹室內地下停車場",
+   "address": "竹北市莊敬段546地號-竹北市北興里13鄰十興路一段255號(B1F、B2F)",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8295545,
+   "lon": 121.0280723,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "道禾一地下停車場",
+   "address": "竹北市自強段302、303、304地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "道禾二平面停車場",
+   "address": "竹北市自強段167、167-1、167-2地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "巨人社區停車場",
+   "address": "竹北市莊敬段269地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "打里摺．大榆二社區附設停車場",
+   "address": "竹北市永興段481地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北新國停車場",
+   "address": "竹北市新國段824、825-1地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "國賓大悅社區停車場",
+   "address": "竹北市莊敬段657地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "富山文孝街停車場",
+   "address": "竹北市翰林段46、47地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "成功路外停車場",
+   "address": "湖口鄉力行段504、507、508、524-1地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8814458,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹縣竹北國民運動中心停車場",
+   "address": "竹北市公園段1164-2地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "助安168新竹高鐵停車場",
+   "address": "竹北市隘興段450、452地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹仁小型車停車場",
+   "address": "竹北市豆子埔段523、524、524-1、526-3地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.836395,
+   "lon": 121.017655,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "中醫-新竹附醫停車場",
+   "address": "竹北市台元段200地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8411983,
+   "lon": 121.0131881,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "五都停車場高鐵新竹六站",
+   "address": "竹北市隘興段382、382-1、382-2、383地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "五都停車場高鐵新竹五站",
+   "address": "竹北市隘興段482、483、483-1、483-2、483-3、484地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹縣北埔鄉公有(鄧南光)停車場",
+   "address": "北埔鄉公園段1233、1248、1251、1293、1294地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.6998411,
+   "lon": 121.0563176,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "台灣聯通竹北光明停車場",
+   "address": "竹北市大學段216地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times新竹橫山合興愛情車站停車場",
+   "address": "橫山鄉九讚頭段472、478、592、593地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.7206278,
+   "lon": 121.1361858,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "錦安停車場",
+   "address": "湖口鄉中興段中興小段385、386地號",
+   "car_total": null,
+   "pay_info": "月租",
+   "source": "hsinchu",
+   "lat": 24.8634639,
+   "lon": 121.0421102,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "正好停竹北站停車場",
+   "address": "竹北市自強段8、9地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "樹杞林公有停車場",
+   "address": "竹東鎮仁愛段586、622、629-2、647-13、647-25、649、650地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "博客停車場開發股份有限公司\n藏壽司竹北場",
+   "address": "竹北市永興段603、603-1、603-2、603-3地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹東新正公有停車場",
+   "address": "竹東鎮杞林段5、6、8、9、10地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "臺大新竹生醫分院停停車場",
+   "address": "竹北市世興段1-8地號",
+   "car_total": null,
+   "pay_info": "計時\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "中央廊帶站",
+   "address": "竹北市世興段1地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹東二重光明停車場",
+   "address": "竹東鎮旭光段215-8地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.77049,
+   "lon": 121.055877,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹東龍鳳停車場",
+   "address": "竹東鎮台泥段13地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "民生停車場",
+   "address": "湖口鄉南湖段452-1、452-2、452-3、452-4、452-5、452-6等6筆地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8814458,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "興湖段127號停車場",
+   "address": "湖口鄉興湖127、127-3、127-12地號",
+   "car_total": null,
+   "pay_info": "計時\n",
+   "source": "hsinchu",
+   "lat": 24.8991833,
+   "lon": 121.0395084,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "兒十六臨時停車場",
+   "address": "竹北市竹仁段1地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8372255,
+   "lon": 121.0121773,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高鐵停一停車場",
+   "address": "竹北市永興段528地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高鐵停二停車場",
+   "address": "竹北市永興段584地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高鐵停三停車場",
+   "address": "竹北市家興段422地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高鐵停四停車場",
+   "address": "竹北市隘興段516地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高鐵停五停車場",
+   "address": "竹北市隘興段339地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "高鐵停九停車場",
+   "address": "竹北市永興段489地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停17文忠停車場",
+   "address": "竹北市翰林段2-1地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "勝利八街停車場",
+   "address": "竹北市莊敬段268地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "綠光停車場",
+   "address": "湖口鄉建興段鳳凰小段16地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8814458,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "伍佰停車場",
+   "address": "寶山鄉寶中段439-1地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.7427912,
+   "lon": 120.9991032,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "榮華停車場",
+   "address": "竹東鎮竹東段竹東小段409地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.7369431,
+   "lon": 121.0891427,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "仁愛停車場",
+   "address": "湖口鄉南湖段452-8、452-9、452-10、452-11地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8814458,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "台元科技園區停車場",
+   "address": "竹北市台元段611地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8411983,
+   "lon": 121.0131881,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "正好停文興站停車場",
+   "address": "竹北市家興段402、402-2、403地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "車萊富停車設備有限公司勝利營業所",
+   "address": "竹北市大學段474地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "車萊富停車設備有限公司竹北營業所",
+   "address": "竹北市縣華段95地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "光明十二停車場",
+   "address": "竹北市縣愛段266地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "鼎豐國際開發股份有限公司竹北成功停車場",
+   "address": "竹北市自強段7-3、7-5地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "正好停文興二站停車場",
+   "address": "竹北市自強段87地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "巨輪停車場",
+   "address": "竹北市隘興段0560-0000地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "鼎豐國際開發股份有限公司竹北東興停車場",
+   "address": "竹北市自東興段644、645-1地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.80877,
+   "lon": 121.045833,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹仁停十三停車場",
+   "address": "竹北市竹仁段1024、1045及1046地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8372255,
+   "lon": 121.0121773,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "北興停車場",
+   "address": "竹北市莊敬段714地號",
+   "car_total": null,
+   "pay_info": "計時、月租\n",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "Times竹北自強五路停車場",
+   "address": "竹北市自強段94地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "停七文興停車場",
+   "address": "竹北市公園段355地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "竹北市農會停車場",
+   "address": "竹北市站後段973及974-1地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘉豐二街路外停車場",
+   "address": "竹北市家興段695、696及697地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "勝利十一路路外停車場",
+   "address": "竹北市莊敬段692地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "有樹林的停車場",
+   "address": "北埔鄉公園段206、206-1、206-3、206-4、206-4、181-4、181-10、183、183-1、183-2、183-3等10筆地號",
+   "car_total": null,
+   "pay_info": "計次",
+   "source": "hsinchu",
+   "lat": 24.6998411,
+   "lon": 121.0563176,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "莊敬二街公有停車場",
+   "address": "竹北市大學段51、52及54地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "多多大停車場",
+   "address": "新豐鄉文昌段62-4地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.9132859,
+   "lon": 120.9991032,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "合好一起錸停車場",
+   "address": "竹北市台元段875-1、875-4、875-8、883地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8411983,
+   "lon": 121.0131881,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "168停車聯盟-竹東長春場",
+   "address": "竹東鎮仁愛段1857地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.774922,
+   "lon": 121.0449768,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "正好停莊敬站停車場",
+   "address": "竹北市自強段137地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "縣華立2停車場",
+   "address": "竹北市縣華段142地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "公十停車場",
+   "address": "竹北市中興段567、568、\n568-1及571地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "台灣大車位光明九路停車場",
+   "address": "竹北市縣福段243地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "遠東百貨竹北店停車場",
+   "address": "竹北市大學段51、52及54地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "誠泰資產管理股份有限公司新埔廣停2路外停車場",
+   "address": "新埔鎮俯福田段213地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8496061,
+   "lon": 121.0908329,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "誠泰資產管理股份有限公司新埔停二路外停車場",
+   "address": "新埔鎮俯福田段301地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8496061,
+   "lon": 121.0908329,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "誠泰資產管理股份有限公司新埔廣停3路外停車場",
+   "address": "新埔鎮俯福田段198地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8496061,
+   "lon": 121.0908329,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "誠泰資產管理股份有限公司新埔停二路外停車場",
+   "address": "新埔鎮俯福田段231地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8496061,
+   "lon": 121.0908329,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟竹北博愛站停車場",
+   "address": "竹北市竹義段994及995地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8356132,
+   "lon": 121.0062288,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "188巷停車場",
+   "address": "竹東鎮旭光段180-4地號",
+   "car_total": null,
+   "pay_info": "月",
+   "source": "hsinchu",
+   "lat": 24.77049,
+   "lon": 121.055877,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "第一停車場",
+   "address": "竹北市隘興段386及387地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "自強七街立體停車場",
+   "address": "竹北市公園段470-1地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "嘟嘟竹北光明商圈站停車場",
+   "address": "竹北市翰林段1349及1350地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "樹光停車場",
+   "address": "竹北市大學段53地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "世興大樓地下停\n車場",
+   "address": "竹北市世興段31地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "義民竹北停車場",
+   "address": "竹北市隘興段386及387地號",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8013694,
+   "lon": 121.0347333,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹縣體育場莊敬一路路外停車場",
+   "address": "竹北市大學段11地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "新竹縣體育場府興東路停車場",
+   "address": "竹北市公園段1164地號",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 24.8346871,
+   "lon": 120.9933678,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "誠泰資產管理股份有限公司寶山國中地下停車場",
+   "address": "山鄉寶中段47、48、70、120及130地號等5筆土地",
+   "car_total": null,
+   "pay_info": "計時、月租",
+   "source": "hsinchu",
+   "lat": 34.0829904,
+   "lon": 134.1474006,
+   "geo_precision": "approx"
+  },
+  {
+   "name": "興林開發-竹北場停車場",
+   "address": "竹北市隘興段538地號(文興路二段14號)",
+   "car_total": null,
+   "pay_info": "計時",
+   "source": "hsinchu",
+   "lat": 24.8079393,
+   "lon": 121.0328973,
+   "geo_precision": "approx"
+  }
+ ]
+}
