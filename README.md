@@ -134,3 +134,32 @@ Claude Desktop 之類的設定檔寫法：
 ## 授權
 
 程式碼採 MIT；資料照上一節的授權條款。
+
+## 遠端版（Cloudflare Worker）
+
+`worker/` 是同一支查詢邏輯的 TypeScript 移植，跑在 Cloudflare Workers 上，給**跑不了本機程式的 AI 網頁版**用
+（ChatGPT／Claude／Gemini 的網頁介面接不到 stdio MCP，只能接 HTTP）。行為跟 Python 版對齊：
+同一個 `find_parking` 工具、同樣的四層資料源、同樣的新鮮度與燈號判斷。
+
+公開端點（開放模式，不用金鑰）：
+
+```
+https://parking.life-os.work
+```
+
+MCP client 設定裡加一台 HTTP 型 server 指到這個網址即可；`GET /health` 回 `{"ok":true}` 可拿來探活。
+
+### 自己架一份
+
+```
+cd worker
+npm install
+npx wrangler kv namespace create TOKENS   # 把回傳的 id 填進 wrangler.toml
+npx wrangler deploy
+```
+
+- 上游回應用 Cache API 快取 60 秒（`TW_PARKING_HTTP_TTL` 可調，0＝不快取）
+- 要鎖權杖：`wrangler secret put TW_PARKING_TOKEN`，並把 `[vars]` 的 `TW_PARKING_OPEN` 拿掉；之後 POST 要帶 `Authorization: Bearer <token>`
+- 要接 TDX（苗栗、金門那層）：`wrangler secret put TDX_CLIENT_ID` 與 `TDX_CLIENT_SECRET`，token 會存在 KV 裡重用到過期；沒設就跳過那層，其他三層照常
+- 免費方案每次呼叫 CPU 10 毫秒、子請求 50 次；台東那層只對半徑內最近的 12 座場站抓細節（超過時日誌印一行筆數），其餘照 Python 版
+- 本機開發：`npx wrangler dev --local`，再跑 `tests/parity.sh <基準網址> http://127.0.0.1:8787` 對照兩邊回同樣的場站

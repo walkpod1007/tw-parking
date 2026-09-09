@@ -1,0 +1,39 @@
+{
+  "CarParks": [
+    {
+      "CarParkID": "ML001",
+      "CarParkName": { "Zh_tw": "苗栗高鐵公有停車場" },
+      "CarParkPosition": {
+        "PositionLat": 24.6052,
+        "PositionLon": 120.8251
+      },
+      "TotalSpaces": 150,
+      "FareDescription": "每小時 30 元"
+    },
+    {
+      "CarParkID": "PT001",
+      "CarParkName": { "Zh_tw": "屏東公園停車場" },
+      "CarParkPosition": {
+        "PositionLat": 22.6750,
+        "PositionLon": 120.4910
+      },
+      "TotalSpaces": 80,
+      "FareDescription": "每小時 20 元"
+    }
+  ],
+  "ParkingAvailabilities": [
+    {
+      "CarParkID": "ML001",
+      "AvailableSpaces": 25,
+      "TotalSpaces": 150,
+      "DataCollectTime": "2026-09-09T14:30:00+08:00"
+    },
+    {
+      "CarParkID": "PT999",
+      "CarParkName": { "Zh_tw": "屏東市信義路立體停車場" },
+      "AvailableSpaces": 45,
+      "TotalSpaces": 250,
+      "DataCollectTime": "2026-09-09T14:30:00+08:00"
+    }
+  ]
+}

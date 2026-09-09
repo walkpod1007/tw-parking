@@ -1,0 +1,10 @@
+name = "tw-parking"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+[[kv_namespaces]]
+binding = "TOKENS"
+id = "REPLACE_ME"
+
+[vars]
+TW_PARKING_OPEN = "1"
